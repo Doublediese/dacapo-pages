@@ -132,6 +132,12 @@ footer{margin-top:64px;padding:30px 0 40px;border-top:1px solid var(--filet)}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa--fRv6S5pb-9k6Ys9BOl0k.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 </head>
 <body>
 
@@ -170,7 +176,7 @@ footer{margin-top:64px;padding:30px 0 40px;border-top:1px solid var(--filet)}
     </div>
     <p class="voix">Raconté par Thibault d’Hauthuille</p>
     <audio id="audio" preload="metadata" src="capsule.mp3"></audio>
-    <a class="reserver" href="https://billetterie.seetickets.fr/quatuor-magenta-concert-auditorium-sophie-dessus-uzerche-19-janvier-2027-css5-uzercheweb-pg101-ri11969621.html" target="_blank" rel="noopener" data-suivi="reserver-1">Réserver ma place
+    <a class="reserver" href="https://billetterie.seetickets.fr/quatuor-magenta-concert-auditorium-sophie-dessus-uzerche-19-janvier-2027-css5-uzercheweb-pg101-ri11969621.html?utm_source=dacapo&amp;utm_medium=page&amp;utm_campaign=vezere-19jan" target="_blank" rel="noopener" data-suivi="reserver-1">Réserver ma place
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 
@@ -228,7 +234,7 @@ footer{margin-top:64px;padding:30px 0 40px;border-top:1px solid var(--filet)}
         <dt>Tarif</dt><dd>Catégorie A : <span class="provisoire">à préciser</span></dd>
         <dt>Tél.</dt><dd><a href="tel:+33555730044">05 55 73 00 44</a></dd>
       </dl>
-      <a class="reserver" href="https://billetterie.seetickets.fr/quatuor-magenta-concert-auditorium-sophie-dessus-uzerche-19-janvier-2027-css5-uzercheweb-pg101-ri11969621.html" target="_blank" rel="noopener" data-suivi="reserver-2">Réserver ma place
+      <a class="reserver" href="https://billetterie.seetickets.fr/quatuor-magenta-concert-auditorium-sophie-dessus-uzerche-19-janvier-2027-css5-uzercheweb-pg101-ri11969621.html?utm_source=dacapo&amp;utm_medium=page&amp;utm_campaign=vezere-19jan" target="_blank" rel="noopener" data-suivi="reserver-2">Réserver ma place
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </section>
@@ -263,8 +269,8 @@ footer{margin-top:64px;padding:30px 0 40px;border-top:1px solid var(--filet)}
 <script>
 (function(){
   // Suivi : à brancher sur l'outil de mesure sans cookies (scans, écoutes, clics Réserver)
-  function suivi(evt){ try{ console.log('[suivi]', evt); }catch(e){} }
-  suivi('ouverture-page');
+  var NOMS={'ecoute-debut':'Ecoute debut','ecoute-25%':'Ecoute 25%','ecoute-50%':'Ecoute 50%','ecoute-75%':'Ecoute 75%','ecoute-fin':'Ecoute fin','reserver-1':'Reserver haut','reserver-2':'Reserver bas','rappel-inscription':'Rappel inscrit'};
+  function suivi(evt){ try{ if(NOMS[evt] && window.plausible) window.plausible(NOMS[evt]); }catch(e){} }
 
   var a=document.getElementById('audio'), lec=document.getElementById('lecteur'),
       btn=document.getElementById('play'), barre=document.getElementById('barre'),
