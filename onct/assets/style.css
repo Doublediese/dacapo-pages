@@ -90,6 +90,10 @@ p{margin:0 0 14px}
 .niveaux button[aria-pressed="true"]{background:var(--fort);color:var(--fond)}
 .oeuvre .intertitre{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--fort);margin:22px 0 6px;letter-spacing:.01em}
 .oeuvre .intertitre:first-of-type{margin-top:4px}
+.guetter{margin:4px 0 14px}
+.guetter dt{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--accent);margin:14px 0 2px}
+.guetter dt:first-child{margin-top:0}
+.guetter dd{margin:0;padding-left:12px;border-left:2px solid var(--ligne)}
 .ecoute{font-style:italic;border-left:2px solid var(--accent);padding:2px 0 2px 12px;margin:6px 0 16px}
 
 /* Épisode audio */

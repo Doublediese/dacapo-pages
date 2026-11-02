@@ -41,6 +41,13 @@ DC.contenu = {
         "Le développement mêle tout. Les motifs de Max se brisent, l'accord de Samiel revient, la tension monte jusqu'à un grand accord dissonant, fortissimo, suivi d'un silence complet. Retenez votre souffle à cet instant. Après ce silence, quelques accords très doux ouvrent une porte, la tonalité bascule en do majeur, et le thème d'Agathe revient à tout l'orchestre, en pleine lumière. Weber termine son ouverture comme il terminera son opéra : par la victoire de l'amour sur les forces noires.",
       ],
       ecoute: "Guettez le grand silence, peu avant la fin : tout le drame se joue dans ce qui vient juste après.",
+      // En salle : ce qu'on lit assis, deux lignes par moment.
+      guetter: [
+        ["Le début", "Un unisson qui enfle et s'éteint, puis quatre cors seuls, comme un cantique : la forêt."],
+        ["L'ombre", "Trémolos des cordes, clarinettes graves, contrebasses en pizzicato : Samiel, le diable, entre en scène."],
+        ["Le combat", "Les cordes s'agitent en do mineur, c'est Max qui doute. Puis les violons lancent avec élan le thème d'Agathe."],
+        ["La fin", "Un grand accord, puis un silence complet. Retenez votre souffle : la lumière arrive juste après."],
+      ],
     },
     {
       id: "strauss", partie: 1, compositeur: "Richard Strauss", titre: "Concerto pour cor et orchestre n° 2", annee: "1942", duree: "20 min", soliste: "Stefan Dohr",
@@ -61,6 +68,11 @@ DC.contenu = {
         "Le concerto est créé le 11 août 1943 au Festival de Salzbourg par Gottfried von Freiberg, cor solo de l'Orchestre philharmonique de Vienne, sous la direction de Karl Böhm. Strauss n'assiste pas au concert.",
       ],
       ecoute: "Dans le deuxième mouvement, oubliez l'instrument : écoutez une voix.",
+      guetter: [
+        ["Allegro", "Le cor entre presque aussitôt. Écoutez-le passer de la fanfare à des phrases tendres, en conversation avec les bois."],
+        ["Andante con moto", "Oubliez l'instrument, écoutez une voix : de longues phrases tenues d'un seul souffle, sur un tapis de cordes."],
+        ["Rondo", "Le rythme bondissant de la chasse. Le refrain revient entre des traits de plus en plus virtuoses, et l'orchestre s'amuse à relancer le soliste."],
+      ],
     },
     { id: "entracte", pause: true, titre: "Entracte", duree: "20 min" },
     {
@@ -85,6 +97,12 @@ DC.contenu = {
         "Schubert meurt en 1828 sans avoir entendu sa symphonie en concert public. Le manuscrit reste dans les papiers de son frère Ferdinand. La première exécution publique a lieu à Vienne en 1841, et Brahms en prépare l'édition, publiée en 1885.",
       ],
       ecoute: "Dans l'Andante, guettez l'instant où l'harmonie glisse ailleurs : la lumière change d'un coup.",
+      guetter: [
+        ["Allegro", "Quatre mesures en guise de rideau, puis un thème qui monte par paliers aux violons, auquel répondent les basses. Au retour de ce thème, la tonalité a changé : la même musique sous un autre éclairage."],
+        ["Andante con moto", "Un thème simple, presque mozartien. Puis l'harmonie glisse vers un ton lointain, comme un nuage devant le soleil. Deux fois."],
+        ["Menuetto", "Sol mineur, nerveux, comme chez Mozart. Au milieu, le trio s'apaise : une danse de village sur des notes tenues, comme une musette."],
+        ["Finale", "Le thème murmuré par les cordes, puis repris forte par tout l'orchestre : la surprise à la manière de Haydn."],
+      ],
     },
   ],
   aSavoir: [

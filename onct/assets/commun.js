@@ -5,7 +5,8 @@ window.DC = window.DC || {};
   const params = new URLSearchParams(location.search);
   DC.RELAIS = (params.get("relais") || "https://ntfy.sh").replace(/\/$/, "");
 
-  DC.esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // Échappe le texte et pose les espaces insécables de la typographie française (avant : ; ! ? », après «).
+  DC.esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])).replace(/ ([:;!?»])/g, "\u00a0$1").replace(/« /g, "«\u00a0");
   DC.id = (n = 10) => Array.from(crypto.getRandomValues(new Uint8Array(n)), (b) => "abcdefghjkmnpqrstuvwxyz23456789"[b % 31]).join("");
   DC.lire = (k, d) => { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } };
   DC.ecrire = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* navigation privée */ } };

@@ -79,7 +79,21 @@
       : `<li class="${position(o)}"><p class="compo">${esc(o.compositeur)}</p><p class="titre">${esc(o.titre)}</p><div class="duree">${o.duree}${o.soliste ? ", avec " + esc(o.soliste) : ""}</div>${label(o)}</li>`).join("")}</ol>`;
   }
 
-  function oeuvreHtml(o) {
+  // En salle, le texte long cède la place à ce qu'il faut guetter : on lit assis, juste avant d'écouter.
+  function oeuvreHtml(o, enSalle) {
+    if (enSalle && o.guetter) {
+      const n = niveaux[o.id + "@salle"] || "guetter";
+      return `<article class="oeuvre" id="oeuvre-${o.id}">
+        <div class="entete-oeuvre"><p class="meta">${esc(o.compositeur)}, ${o.annee}</p><h3>${esc(o.titre)}</h3></div>
+        <div class="niveaux" role="group" aria-label="Niveau de lecture">
+          <button data-niveau="${o.id}@salle:guetter" aria-pressed="${n === "guetter"}">À l'écoute</button>
+          <button data-niveau="${o.id}@salle:bref" aria-pressed="${n === "bref"}">En bref</button>
+        </div>
+        ${n === "bref" ? `<p>${esc(o.bref)}</p><p class="ecoute">${esc(o.ecoute)}</p>`
+          : `<dl class="guetter">${o.guetter.map(([q, t]) => `<dt>${esc(q)}</dt><dd>${esc(t)}</dd>`).join("")}</dl>`}
+        <p class="petit">Le texte complet reste dans l'onglet Avant, pour le relire chez vous.</p>
+      </article>`;
+    }
     const n = niveaux[o.id] || "bref";
     return `<article class="oeuvre" id="oeuvre-${o.id}">
       <div class="entete-oeuvre"><p class="meta">${esc(o.compositeur)}, ${o.annee}</p><h3>${esc(o.titre)}</h3></div>
@@ -92,7 +106,7 @@
     </article>`;
   }
 
-  const oeuvres = (filtre) => C.soiree.filter((o) => !o.pause && (!filtre || filtre(o))).map(oeuvreHtml).join("");
+  const oeuvres = (filtre, enSalle) => C.soiree.filter((o) => !o.pause && (!filtre || filtre(o))).map((o) => oeuvreHtml(o, enSalle)).join("");
 
   const questionVenue = () => local.venue ? "" : `<div class="bloc plein">
       <p class="sans" style="font-weight:500;margin-bottom:4px">Une question avant de commencer</p>
@@ -148,7 +162,7 @@
     if (m === "commence" || m === "reprise") {
       const titre = m === "commence" ? "Le concert commence." : "La seconde partie commence.";
       const suite = m === "commence" ? "Passez votre téléphone en mode avion. Rendez-vous à l'entracte : la suite du programme vous y attend." : "Rendez-vous à la sortie : le bis, les photos et votre mot vous attendent ici.";
-      const lecture = noirLecture ? `<div style="margin-top:26px">${oeuvres((o) => (m === "commence" ? o.partie === 1 : o.partie === 2))}</div>` : `<button class="bouton discret" style="margin-top:8px" data-action="noir-lecture">Relire le programme sans éclairer la salle</button>`;
+      const lecture = noirLecture ? `<div style="margin-top:26px">${oeuvres((o) => (m === "commence" ? o.partie === 1 : o.partie === 2), true)}</div>` : `<button class="bouton discret" style="margin-top:8px" data-action="noir-lecture">Relire le programme sans éclairer la salle</button>`;
       return `${messageHtml()}<div class="noir apparition"><p class="grand">${titre}</p><p>${suite}</p>${lecture}</div>`;
     }
     if (m === "entracte") {
@@ -157,7 +171,7 @@
         <h1>Entracte</h1>
         <p class="accroche">Vingt minutes. Ensuite, la jeunesse de Schubert.</p>
         ${ligneSoir(true)}
-        ${oeuvreHtml(s)}
+        ${oeuvreHtml(s, true)}
         <h2>Le mot de notre mécène</h2>
         <div class="cadre-vide court">À cette place, votre mécène dit en une minute pourquoi il soutient l'orchestre.</div>
         ${partenaires()}
@@ -169,7 +183,7 @@
       <p class="accroche">${avantOuverture ? "Cet écran prend vie à l'ouverture des portes. Vous y retrouverez le programme, lisible depuis votre fauteuil." : "Il reste quelques minutes avant le début. Voici la soirée, dans l'ordre."}</p>
       ${!avantOuverture ? questionVenue() : ""}
       ${ligneSoir(true)}
-      ${oeuvres()}
+      ${oeuvres(null, !avantOuverture)}
       ${pied()}`;
   }
 
