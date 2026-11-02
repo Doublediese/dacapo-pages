@@ -44,15 +44,15 @@
   };
 
   // ---------- Morceaux ----------
-  const entete = () => `<div class="entete"><span><strong>${esc(C.orchestre)}</strong></span><button class="petit" data-vue="saison" style="background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;color:inherit;white-space:nowrap">Ma saison</button></div>`;
+  const entete = () => `<div class="entete">${C.logo ? `<img class="logo-orchestre" src="assets/${esc(C.logo)}" alt="${esc(C.orchestre)}">` : `<span><strong>${esc(C.orchestre)}</strong></span>`}<button class="petit" data-vue="saison" style="background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;color:inherit;white-space:nowrap">Ma saison</button></div>`;
 
   const fil = () => {
     const ecrans = [["avant", "Avant"], ["salle", "En salle"], ["apres", "Après"]];
     const direct = { avant: "avant", salle: ["portes", "commence", "entracte", "reprise"], apres: "apres" };
-    return `<nav class="fil" aria-label="Étapes du guide">${ecrans.map(([k, l]) => {
+    return `<div class="haut"><nav class="fil" aria-label="Étapes du guide">${ecrans.map(([k, l]) => {
       const vivant = [].concat(direct[k]).includes(etat.moment) && etat.moment !== "avant";
       return `<button data-vue="${k}" ${vue === k ? 'aria-current="page"' : ""}>${vivant ? '<span class="point" aria-hidden="true"></span>' : ""}${l}</button>`;
-    }).join("")}</nav>`;
+    }).join("")}</nav>${bandeauHtml()}</div>`;
   };
 
   const messageHtml = () => etat.message ? `<div class="message ${etat.niveau === "urgent" ? "urgent" : ""}" role="alert">${esc(etat.message)}</div>` : "";
@@ -87,7 +87,7 @@
         <button data-niveau="${o.id}:bref" aria-pressed="${n === "bref"}">En bref</button>
         <button data-niveau="${o.id}:long" aria-pressed="${n === "long"}">Pour aller plus loin</button>
       </div>
-      ${n === "bref" ? `<p>${esc(o.bref)}</p>` : o.long.map((p) => `<p>${esc(p)}</p>`).join("")}
+      ${n === "bref" ? `<p>${esc(o.bref)}</p>` : o.long.map((p) => p.startsWith("§ ") ? `<h4 class="intertitre">${esc(p.slice(2))}</h4>` : `<p>${esc(p)}</p>`).join("")}
       <p class="ecoute">${esc(o.ecoute)}</p>
     </article>`;
   }
@@ -138,7 +138,7 @@
       <h2>À savoir en entrant</h2>
       ${C.aSavoir.map((p) => `<p>${esc(p)}</p>`).join("")}
       <h2>Les interprètes</h2>
-      ${C.artistes.map((a) => `<p><strong style="color:var(--fort)">${esc(a.nom)}</strong>, ${esc(a.role)}. ${esc(a.texte)}</p>`).join("")}
+      ${C.artistes.map((a) => `<p><strong style="color:var(--fort)">${esc(a.nom)}</strong>, ${esc(a.role)}. ${esc(a.texte)}${a.lien ? `<br><a class="petit" href="${esc(a.lien)}" target="_blank" rel="noopener">Sa biographie complète</a>` : ""}</p>`).join("")}
       ${partenaires()}
       ${pied()}`;
   }
@@ -222,7 +222,7 @@
     document.body.className = "mode-" + mode();
     const ecran = { saison: ecranSaison, avant: ecranAvant, salle: ecranSalle, apres: ecranApres }[vue]();
     const focus = document.activeElement && document.activeElement.id;
-    app.innerHTML = `<div class="colonne">${bandeauHtml()}${ecran}</div>${secoursHtml()}`;
+    app.innerHTML = `<div class="colonne">${vue === "saison" ? bandeauHtml() : ""}${ecran}</div>${secoursHtml()}`;
     if (focus && document.getElementById(focus)) { const el = document.getElementById(focus); el.focus(); if (el.setSelectionRange && el.value) el.setSelectionRange(el.value.length, el.value.length); }
   }
 
