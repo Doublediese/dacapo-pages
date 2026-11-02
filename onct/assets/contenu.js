@@ -6,7 +6,7 @@ window.DC = window.DC || {};
 DC.contenu = {
   orchestre: "Orchestre national du Capitole de Toulouse",
   // Fichier du logo dans assets/ (null tant qu'il n'est pas fourni : le nom s'affiche en texte).
-  logo: null,
+  logo: "logo-onct.svg",
   saison: "Saison 2026-2027",
   concert: {
     titre: "Alexander Soddy, Stefan Dohr",

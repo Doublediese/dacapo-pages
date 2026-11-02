@@ -83,7 +83,7 @@
 
   // ---------- Écrans ----------
   const onglets = [["soir", "Ce soir"], ["public", "Public"], ["parcours", "Parcours"], ["equipe", "Équipe"]];
-  const entete = () => `<div class="entete"><span><strong>Espace de l'orchestre</strong></span><span>Da Capo</span></div>
+  const entete = () => `<div class="entete">${DC.contenu.logo ? `<img class="logo-orchestre" src="assets/${esc(DC.contenu.logo)}" alt="${esc(DC.contenu.orchestre)}">` : ""}<span style="text-align:right"><strong>Espace de l'orchestre</strong><br>Da Capo</span></div>
     <nav class="fil" aria-label="Rubriques">${onglets.map(([k, l]) => `<button data-onglet="${k}" ${onglet === k ? 'aria-current="page"' : ""}>${l}</button>`).join("")}</nav>`;
 
   const statutHtml = () => ({
@@ -216,12 +216,12 @@
     const lien = urlGuide();
     const nuage = DC.nuageHtml(DC.frequences(tousAvis(), etat.masques).map(([m, n]) => [m, n]));
     const pages = {
-      rappel: `<div class="email"><div class="tete">De : Orchestre national du Capitole<br>Objet : Samedi, 20 h, Halle aux Grains : votre guide est prêt</div><div class="corps">
+      rappel: `<div class="email"><div class="tete">De : Orchestre national du Capitole<br>Objet : Samedi, 20 h, Halle aux Grains : votre guide est prêt</div><div class="corps">${DC.contenu.logo ? `<img src="assets/${esc(DC.contenu.logo)}" alt="" style="height:44px;display:block;margin:0 0 14px">` : ""}
         <h3>À samedi</h3><p>Samedi 14 novembre, 20 h, Halle aux Grains. Le concert dure une heure et demie avec un entracte.</p>
         <p>Votre guide d'écoute est prêt : la parole des interprètes, les clés de chaque œuvre, un épisode de huit minutes à écouter avant de partir.</p>
         <div class="qr">${DC.qrSvg(lien, 140)}</div><p><a href="${esc(lien)}">Ouvrir mon guide</a></p>
         <p style="font-size:13px;color:#545a66">Vous venez accompagné ? Transférez-leur cet email : le guide est pour eux aussi.</p></div></div>`,
-      lendemain: `<div class="email"><div class="tete">De : Orchestre national du Capitole<br>Objet : Hier soir, en un mot</div><div class="corps">
+      lendemain: `<div class="email"><div class="tete">De : Orchestre national du Capitole<br>Objet : Hier soir, en un mot</div><div class="corps">${DC.contenu.logo ? `<img src="assets/${esc(DC.contenu.logo)}" alt="" style="height:44px;display:block;margin:0 0 14px">` : ""}
         <h3>Merci pour cette soirée</h3><p>Nous avons demandé au public de résumer la soirée en un mot. Voici ceux qui sont revenus le plus souvent.</p>
         <div style="background:#f3f1ec;border-radius:3px">${nuage || '<p style="padding:14px;margin:0">Le nuage de mots s\'affiche ici.</p>'}</div>
         ${etat.bis ? `<p>Le bis d'hier soir : ${esc(etat.bis)}.</p>` : ""}

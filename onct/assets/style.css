@@ -34,7 +34,7 @@ button{font:inherit;color:inherit}
 .entete{padding:18px 0 14px;border-bottom:1px solid var(--ligne);font-family:var(--sans);font-size:14px;line-height:1.35;color:var(--doux);display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .entete strong{color:var(--fort);font-weight:500}
 
-.entete .logo-orchestre{height:40px;width:auto;max-width:65%;display:block;align-self:center}
+.entete .logo-orchestre{height:46px;width:auto;max-width:65%;display:block;align-self:center}
 .mode-salle .logo-orchestre,.mode-nuit .logo-orchestre{filter:invert(1) grayscale(1) brightness(1.6)}
 
 /* Fil des écrans : reste en haut de l'écran pendant la lecture */
