@@ -7,8 +7,9 @@ DC.contenu = {
   // Préfixe du stockage local et du canal : cette démo ne partage rien avec celle de l'ONCT.
   prefixe: "roca-",
   orchestre: "Festival de Rocamadour",
-  // Fichier du logo dans assets/ (null tant qu'il n'est pas fourni : le nom s'affiche en texte).
-  logo: null,
+  // Logo en version foncée pour les écrans clairs ; la feuille de style l'éclaircit dans les écrans sombres.
+  // L'original blanc est conservé à côté (logo-rocamadour-blanc.png).
+  logo: "logo-rocamadour.png",
   saison: "Festival de Rocamadour, août 2026",
   concert: {
     titre: "Cantus Missae",
