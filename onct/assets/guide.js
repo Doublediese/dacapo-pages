@@ -8,7 +8,8 @@
 
   let etat = DC.etatVide();
   let vue = "saison", bandeau = false, statut = session ? "connexion" : "seul";
-  let niveaux = DC.lire("dc-niveaux", {});
+  // Le niveau de lecture n'est pas mémorisé : chaque ouverture du guide repart sur « En bref ».
+  let niveaux = {};
   let local = DC.lire(cleLocale, { venue: "", avisEnvoye: false, choisies: [] });
   let noirLecture = false, brouillon = { mot: "", moment: "", reviendrait: "", email: "", c1: false, c2: false };
   const canal = session ? DC.canal(session, recevoir, (s) => { statut = s; if (s === "connecte") canal.envoyer({ t: "hello", id: moi }).catch(() => {}); rendre(); }) : null;
@@ -256,7 +257,7 @@
       sauver(); return rendre();
     }
     if (b.dataset.vue) { vue = b.dataset.vue; if (b.hasAttribute("data-ferme-bandeau") || vue === "salle") bandeau = false; window.scrollTo(0, 0); return rendre(); }
-    if (b.dataset.niveau) { const [id, n] = b.dataset.niveau.split(":"); niveaux[id] = n; DC.ecrire("dc-niveaux", niveaux); return rendre(); }
+    if (b.dataset.niveau) { const [id, n] = b.dataset.niveau.split(":"); niveaux[id] = n; return rendre(); }
     if (b.dataset.venue) {
       local.venue = b.dataset.venue; sauver();
       if (local.venue !== "passer") envoyer({ t: "venue", id: moi, v: local.venue });
