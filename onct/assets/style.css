@@ -127,6 +127,8 @@ label.case input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:va
 .photos{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0}
 .photos figure{margin:0;position:relative}
 .photos img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:2px}
+.photos figure{cursor:pointer}
+.photos figure.choisie img{outline:3px solid var(--accent);outline-offset:-3px}
 .photos input{position:absolute;top:8px;left:8px;width:22px;height:22px;accent-color:var(--accent)}
 
 /* Nuage */

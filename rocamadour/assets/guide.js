@@ -192,7 +192,8 @@
       return `${entete()}${fil()}${messageHtml()}<h1>Après le concert</h1><p class="accroche">Le bis, les photos de la soirée et votre avis vous attendent ici, dès la fin du concert.</p>${pied()}`;
     }
     const photos = etat.photos.length
-      ? `<div class="photos">${etat.photos.map((u, i) => `<figure><img src="${esc(u)}" alt="Photo de la soirée ${i + 1}" loading="lazy"><input type="checkbox" aria-label="Choisir la photo ${i + 1}" data-photo="${esc(u)}" ${local.choisies.includes(u) ? "checked" : ""}></figure>`).join("")}</div>
+      ? `<div class="photos">${etat.photos.map((u, i) => `<figure data-choisir="${esc(u)}" class="${local.choisies.includes(u) ? "choisie" : ""}"><img src="${esc(u)}" alt="Photo de la soirée ${i + 1}" loading="lazy"><input type="checkbox" aria-label="Choisir la photo ${i + 1}" data-photo="${esc(u)}" ${local.choisies.includes(u) ? "checked" : ""}></figure>`).join("")}</div>
+         <p class="petit" style="margin:4px 0 8px">${local.choisies.length ? "" : "Touchez une photo pour la choisir."}</p>
          <button class="bouton discret" data-action="partager-photos" ${local.choisies.length ? "" : "disabled"}>Partager ${local.choisies.length > 1 ? "les " + local.choisies.length + " photos" : "la photo"}</button>`
       : `<p class="doux">Les photos de la soirée apparaîtront ici dès que le photographe les publie.</p>`;
     const avis = local.avisEnvoye
@@ -236,6 +237,7 @@
     document.body.className = "mode-" + mode();
     const ecran = { saison: ecranSaison, avant: ecranAvant, salle: ecranSalle, apres: ecranApres }[vue]();
     const focus = document.activeElement && document.activeElement.id;
+    if (vue === "apres" && etat.photos.length) prechargerPhotos();
     app.innerHTML = `<div class="colonne">${vue === "saison" ? bandeauHtml() : ""}${ecran}</div>${secoursHtml()}`;
     if (focus && document.getElementById(focus)) { const el = document.getElementById(focus); el.focus(); if (el.setSelectionRange && el.value) el.setSelectionRange(el.value.length, el.value.length); }
   }
@@ -247,9 +249,14 @@
   app.addEventListener("input", memoriserBrouillon);
 
   app.addEventListener("click", async (e) => {
-    const b = e.target.closest("button, input[data-photo]");
+    const b = e.target.closest("button, input[data-photo], figure[data-choisir]");
     if (!b) return;
     memoriserBrouillon();
+    if (b.dataset.choisir !== undefined) {
+      const u = b.dataset.choisir, oui = !local.choisies.includes(u);
+      local.choisies = oui ? [...local.choisies, u] : local.choisies.filter((x) => x !== u);
+      sauver(); return rendre();
+    }
     if (b.dataset.photo !== undefined) {
       const u = b.dataset.photo;
       local.choisies = b.checked ? [...new Set([...local.choisies, u])] : local.choisies.filter((x) => x !== u);
@@ -297,13 +304,30 @@
     document.body.appendChild(a); a.click(); a.remove();
   }
 
-  async function partagerPhotos() {
-    try {
-      const fichiers = await Promise.all(local.choisies.map(async (u, i) => new File([await (await fetch(u)).blob()], `soiree-${i + 1}.jpg`, { type: "image/jpeg" })));
-      if (navigator.canShare && navigator.canShare({ files: fichiers })) await navigator.share({ files: fichiers, title: "Mercredi soir à l'abbatiale de Souillac" });
-      else DC.toast("Ce téléphone ne sait pas partager plusieurs photos : enregistrez-les une par une.");
-    } catch { /* partage annulé */ }
+  // Les photos sont téléchargées à l'avance : sur iPhone, le partage doit partir dans l'instant du toucher,
+  // sans attendre le réseau, sinon le téléphone le refuse sans rien dire.
+  const fichiersPhotos = {};
+  function prechargerPhotos() {
+    etat.photos.forEach((u, i) => {
+      if (u in fichiersPhotos) return;
+      fichiersPhotos[u] = null;
+      fetch(u).then((r) => (r.ok ? r.blob() : null)).then((b) => { if (b) fichiersPhotos[u] = new File([b], `soiree-${i + 1}.jpg`, { type: "image/jpeg" }); }).catch(() => {});
+    });
   }
+
+  function partagerPhotos() {
+    const titre = "Mercredi soir à l'abbatiale de Souillac";
+    const fichiers = local.choisies.map((u) => fichiersPhotos[u]).filter(Boolean);
+    if (fichiers.length === local.choisies.length && navigator.canShare && navigator.canShare({ files: fichiers })) {
+      navigator.share({ files: fichiers, title: titre }).catch(() => {});
+    } else if (navigator.share) {
+      // Repli : on partage le lien de la photo (ou de la page s'il y en a plusieurs).
+      navigator.share({ title: titre, url: local.choisies.length === 1 ? local.choisies[0] : location.origin + location.pathname }).catch(() => {});
+    } else {
+      DC.toast("Ce téléphone ne sait pas partager les photos : touchez longuement une photo pour l'enregistrer.");
+    }
+  }
+
 
   rendre();
 })();
