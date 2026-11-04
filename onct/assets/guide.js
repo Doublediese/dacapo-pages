@@ -144,7 +144,7 @@
       ${questionVenue()}
       <h2>Le programme raconté par ses interprètes</h2>
       <div class="cadre-vide">À cette place, Alexander Soddy ou Stefan Dohr raconte ce programme, en vidéo ou en audio.</div>
-      <div class="episode"><span class="rond" aria-hidden="true"></span><div><p class="sans" style="margin:0;font-weight:500;color:var(--fort)">L'épisode, huit minutes avant de partir</p><p class="petit" style="margin:0">Le programme raconté par Thibault d'Hauthuille, à écouter chez soi.</p></div></div>
+      <div class="episode"><span class="rond" aria-hidden="true"></span><div><p class="sans" style="margin:0;font-weight:500;color:var(--fort)">Le programme raconté en huit minutes</p><p class="petit" style="margin:0">Par Thibault d'Hauthuille. À écouter quand vous voulez d'ici le concert : chez vous, en route, ou en attendant l'ouverture des portes.</p></div></div>
       <h2>La soirée</h2>
       <p class="doux" style="margin:0">${esc(c.duree)}. Le fil : ${esc(c.fil.toLowerCase())}.</p>
       ${ligneSoir(false)}

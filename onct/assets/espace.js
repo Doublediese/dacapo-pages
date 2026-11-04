@@ -218,7 +218,7 @@
     const pages = {
       rappel: `<div class="email"><div class="tete">De : Orchestre national du Capitole<br>Objet : Samedi, 20 h, Halle aux Grains : votre guide est prêt</div><div class="corps">${DC.contenu.logo ? `<img src="assets/${esc(DC.contenu.logo)}" alt="" style="height:44px;display:block;margin:0 0 14px">` : ""}
         <h3>À samedi</h3><p>Samedi 14 novembre, 20 h, Halle aux Grains. Le concert dure une heure et demie avec un entracte.</p>
-        <p>Votre guide d'écoute est prêt : la parole des interprètes, les clés de chaque œuvre, un épisode de huit minutes à écouter avant de partir.</p>
+        <p>Votre guide d'écoute est prêt : la parole des interprètes, les clés de chaque œuvre, un épisode de huit minutes à écouter quand vous voulez d'ici le concert.</p>
         <div class="qr">${DC.qrSvg(lien, 140)}</div><p><a href="${esc(lien)}">Ouvrir mon guide</a></p>
         <p style="font-size:13px;color:#545a66">Vous venez accompagné ? Transférez-leur cet email : le guide est pour eux aussi.</p></div></div>`,
       lendemain: `<div class="email"><div class="tete">De : Orchestre national du Capitole<br>Objet : Hier soir, en un mot</div><div class="corps">${DC.contenu.logo ? `<img src="assets/${esc(DC.contenu.logo)}" alt="" style="height:44px;display:block;margin:0 0 14px">` : ""}
