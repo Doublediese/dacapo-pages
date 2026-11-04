@@ -129,7 +129,7 @@
       <div class="rangee" style="margin-top:10px"><button class="bouton" data-action="message">Afficher</button><button class="bouton trait" data-action="message-retirer" ${etat.message ? "" : "disabled"}>Retirer</button></div>
       <h2>Photos de la soirée</h2>
       <p class="petit">${etat.photos.length ? `${etat.photos.length} photo${etat.photos.length > 1 ? "s" : ""} publiée${etat.photos.length > 1 ? "s" : ""}. ` : ""}Elles apparaissent chez les spectateurs dans « Après le concert ».</p>
-      <label class="bouton" style="margin-top:8px" for="photo">${envoiPhoto || "Prendre ou choisir une photo"}</label>
+      ${envoiPhoto ? `<p class="bouton" style="margin-top:8px" role="status">${envoiPhoto}</p>` : `<label class="bouton" style="margin-top:8px" for="photo-appareil">Prendre une photo</label><label class="bouton discret" style="margin-top:8px" for="photo">Choisir dans l'album</label>`}
       <h2>Démonstration</h2>
       <p class="petit">Remise à zéro de la soirée : moment, bis, message, photos et avis. Les spectateurs reliés restent reliés.</p>
       <button class="bouton discret" data-action="reset">Tout remettre à zéro</button>
@@ -261,7 +261,8 @@
   });
 
   // Le champ photo vit hors de la zone redessinée : un événement reçu pendant la prise de vue ne le détruit pas.
-  const champPhoto = document.getElementById("photo");
+  // Deux champs : l'un ouvre directement l'appareil photo, l'autre l'album (certains téléphones ne proposent pas les deux).
+  ["photo", "photo-appareil"].forEach((id) => { const champPhoto = document.getElementById(id);
   champPhoto.addEventListener("change", async () => {
     const f = champPhoto.files[0]; if (!f) return;
     envoiPhoto = "Envoi de la photo…"; rendre();
@@ -272,7 +273,7 @@
       DC.toast("Photo publiée.");
     } catch { DC.toast("La photo n'est pas partie. Réessayez."); }
     champPhoto.value = ""; envoiPhoto = ""; rendre();
-  });
+  }); });
 
   app.addEventListener("click", (e) => {
     const b = e.target.closest("button");
