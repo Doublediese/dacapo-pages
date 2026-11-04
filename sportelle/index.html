@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Da Capo Répertoire · démonstration pour La Sportelle</title>
+<meta name="description" content="Trois vues d'un même outil : la diffusion, le programmateur, le spectateur.">
+<link rel="stylesheet" href="assets/diffusion.css">
+<style>
+body{background:var(--papier)}
+.hub{max-width:1080px;margin:0 auto;padding:48px 24px 64px}
+.hub-tete{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.hub h1{font-size:clamp(34px,6vw,54px);max-width:760px}
+.hub .chapo{font-family:var(--serif);font-size:21px;line-height:1.45;max-width:720px;margin:18px 0 0;color:#3b352e}
+.dd{width:64px;opacity:.9}
+.faces{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.face{display:flex;flex-direction:column;background:var(--blanc);border:1px solid var(--ligne);border-radius:16px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.face:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(30,27,24,.1)}
+.face-tete{padding:22px 20px 18px;color:#f3ece0;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end}
+.face:nth-child(1) .face-tete{background:#221d19}
+.face:nth-child(2) .face-tete{background:linear-gradient(140deg,#131a2a,#6b5a3c)}
+.face:nth-child(3) .face-tete{background:linear-gradient(160deg,#0e1320 40%,#2a1f2a)}
+.face-num{font-family:var(--serif);font-size:15px;opacity:.7}
+.face h2{font-size:28px;color:#fff;margin-top:4px}
+.face-ou{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-top:6px}
+.face-corps{padding:16px 20px 20px;font-size:14.5px;display:flex;flex-direction:column;gap:10px;flex:1}
+.face-corps p{margin:0}
+.face-lien{margin-top:auto;color:var(--rouge);font-weight:600}
+.gestes{margin-top:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+.gestes ol{margin:12px 0 0;padding-left:22px;font-size:16px}
+.gestes li{margin-bottom:10px}
+.qr-salle{background:var(--blanc);border:1px solid var(--ligne);border-radius:16px;padding:20px;display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center}
+.qr-salle p{margin:0;font-size:14px}
+.avert{margin-top:40px;font-size:13px;color:var(--gris);border-top:1px solid var(--ligne);padding-top:16px}
+@media (max-width:860px){.faces,.gestes{grid-template-columns:1fr}.qr-salle{grid-template-columns:110px 1fr}}
+</style>
+</head>
+<body>
+<main class="hub">
+  <div class="hub-tete">
+    <div>
+      <p class="surtitre">Démonstration pour l'Ensemble la Sportelle</p>
+      <h1>Un seul jeu de contenus, trois façons de le lire</h1>
+    </div>
+    <img class="dd" src="assets/logo-dd.png" alt="Double Dièse">
+  </div>
+  <p class="chapo">Tes programmes sont saisis une fois. Ton équipe et tes agents les envoient aux programmateurs, qui les découvrent sur une page faite pour décider. Le soir du concert, ton public les lit dans la salle.</p>
+
+  <section class="faces">
+    <a class="face" href="diffusion.html">
+      <div class="face-tete"><span class="face-num">1</span><h2>Diffusion</h2><span class="face-ou">Sur ordinateur</span></div>
+      <div class="face-corps"><p>Le tableau de bord de Vincent et de tes agents : campagnes, liens personnels, qui a ouvert quoi, qui demande un contact.</p><span class="face-lien">Ouvrir la vue diffusion →</span></div>
+    </a>
+    <a class="face" href="programmateur.html?r=jm3p&amp;c=c-mediavita&amp;p=mediavita,hymne">
+      <div class="face-tete"><span class="face-num">2</span><h2>Programmateur</h2><span class="face-ou">Téléphone ou ordinateur</span></div>
+      <div class="face-corps"><p>La page qu'un directeur de festival reçoit à son nom : tes programmes, des vidéos inédites, l'épisode, le kit, et un bouton pour écrire à Vincent.</p><span class="face-lien">Voir comme un programmateur →</span></div>
+    </a>
+    <a class="face" href="concert.html">
+      <div class="face-tete"><span class="face-num">3</span><h2>Spectateur</h2><span class="face-ou">Téléphone, par QR code</span></div>
+      <div class="face-corps"><p>Cantus Missae, le soir du concert : les clés d'écoute, les textes chantés et leur traduction, en français, en anglais ou en allemand.</p><span class="face-lien">Ouvrir la page spectateur →</span></div>
+    </a>
+  </section>
+
+  <section class="gestes">
+    <div>
+      <h2>La démonstration en trois gestes</h2>
+      <ol>
+        <li>Ouvre la <a href="diffusion.html">vue diffusion</a> sur ton ordinateur.</li>
+        <li>Sur le tableau de bord, scanne le QR code de Claire Vasseur avec ton téléphone : te voilà programmatrice.</li>
+        <li>Ouvre un programme, lance la vidéo, touche « Je suis intéressé ». Regarde l'ordinateur.</li>
+      </ol>
+    </div>
+    <div class="qr-salle">
+      <div id="qr-salle"></div>
+      <p><strong>Le QR code de salle.</strong><br>Scanne-le pour lire Cantus Missae comme un spectateur, dans n'importe quelle salle de la tournée.</p>
+    </div>
+  </section>
+
+  <p class="avert">Démonstration réalisée par Double Dièse. Les programmes, l'équipe et la presse viennent de la brochure de diffusion 2026 de La Sportelle ; les textes de présentation sont des brouillons à valider. Les programmateurs, leurs structures et toutes les statistiques sont fictifs. Les éléments marqués V2 arrivent avec la seconde version.</p>
+</main>
+<script src="assets/qrcode.js"></script>
+<script src="assets/commun.js"></script>
+<script>
+  document.getElementById("qr-salle").innerHTML = DC.qrSvg(new URL("concert.html", location.href).href, 140);
+</script>
+</body>
+</html>

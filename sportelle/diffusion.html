@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Diffusion · Ensemble la Sportelle · Da Capo Répertoire</title>
+<meta name="description" content="Démonstration Da Capo Répertoire : la vue diffusion de l'Ensemble la Sportelle.">
+<link rel="stylesheet" href="assets/diffusion.css">
+</head>
+<body>
+<div class="appli">
+  <nav class="cote" aria-label="Navigation">
+    <div class="marque"><span class="marque-dc">Da Capo</span><span class="marque-rep">Répertoire</span></div>
+    <div class="ensemble-nom">Ensemble la Sportelle</div>
+    <ul class="menu" id="menu"></ul>
+    <div class="moi">
+      <label for="moi">Vous êtes</label>
+      <select id="moi"></select>
+      <p class="moi-role" id="moi-role"></p>
+    </div>
+    <div class="direct" id="direct"><span class="point"></span><span>Connexion…</span></div>
+    <a class="retour" href="index.html">Les trois vues de la démo</a>
+  </nav>
+  <main class="principal" id="principal"></main>
+</div>
+<div id="voile" class="voile" hidden></div>
+<script src="assets/qrcode.js"></script>
+<script src="assets/donnees.js"></script>
+<script src="assets/commun.js"></script>
+<script src="assets/diffusion.js"></script>
+</body>
+</html>
