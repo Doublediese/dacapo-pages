@@ -98,7 +98,7 @@
     const max = Math.max(1, ...parProg.map((x) => x.n));
     const lien = demo ? lienPour(demo, campagneDe(demo)) : "";
     return `
-      <header class="entete"><div><p class="surtitre">${new Date().toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" })}</p><h1>${esc(["vincent", "direction"].includes(S.moi) ? "Bonjour " + moi().court : moi().nom)}</h1></div></header>
+      <header class="entete"><div><p class="surtitre">${new Date().toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" })}</p><h1>${esc(S.moi === "direction" ? "Bonjour " + moi().court : moi().nom)}</h1></div></header>
       ${demo ? `<section class="essai">
         <div class="essai-qr">${DC.qrSvg(lien, 180)}</div>
         <div class="essai-texte">
@@ -235,7 +235,7 @@
   }
   function relance(cle) {
     const p = DC.programmateur(cle), b = bilan(cle), progs = [...b.programmes].map(titre);
-    const texte = `Bonjour ${p.nom.split(" ")[0]},\n\nJe vois que vous avez pris le temps de découvrir ${progs.join(" et ")}. Je serais heureux d'en parler avec vous : avez-vous dix minutes cette semaine pour un appel ?\n\nBien à vous,\n${moi().nom}`;
+    const texte = `Bonjour ${p.nom.split(" ")[0]},\n\nJe vois que vous avez pris le temps de découvrir ${progs.join(" et ")}. Je serais heureux d'en parler avec vous : avez-vous dix minutes cette semaine pour un appel ?\n\nBien à vous,\n${S.moi === "direction" ? moi().nom : "L'équipe de diffusion"}\nEnsemble la Sportelle`;
     voile(`<p class="surtitre">Relance</p><h2>${esc(p.nom)}</h2><p class="note">Un brouillon à partir de ce qu'il a consulté. Vous l'envoyez depuis votre messagerie.</p><textarea class="brouillon" rows="9">${esc(texte).replace(/ /g, " ")}</textarea><p class="essai-actions"><button class="bouton" data-copier-texte>Copier le message</button></p>`);
   }
   function csv(cid) {

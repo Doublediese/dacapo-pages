@@ -13,17 +13,17 @@
       pour: "Pour", selection: (n, qui) => `${qui} a choisi ${n === 1 ? "ce programme" : "ces programmes"} pour vous.`,
       apercu: "Aperçu programmateur", selectionnes: "Sélectionnés pour vous", repertoire: "Tout le répertoire", repertoireNote: "Neuf des dix-huit programmes de l'ensemble.",
       voir: "Découvrir", ilsEnParlent: "Ils en parlent", equipe: "L'équipe artistique", scenes: "Ils l'ont accueilli",
-      contact: "Parlons de votre saison", contactTexte: "Une question sur un programme, des dates, un format ? Vincent vous répond.",
+      contact: "Parlons de votre saison", contactTexte: "Une question sur un programme, des dates, un format ? L'équipe de diffusion vous répond.",
       interesse: "Ce programme m'intéresse", interesseCourt: "Je suis intéressé", rappel: "Rappelez-moi", appeler: "Appeler",
       transparence: "Ce lien vous est personnel. Pour mieux vous répondre, La Sportelle voit quels programmes vous consultez. Aucune autre donnée n'est recueillie.",
       fermer: "Fermer", direction: "Direction", effectif: "Effectif", duree: "Durée", accomp: "Accompagnement",
       video: "Vidéo", inedit: "Inédit · réservé aux professionnels", public: "Extrait", episode: "L'épisode", episodeTexte: (d) => `Le programme raconté en ${d}, avec les passages à guetter.`,
       programme: "Le programme", oeuvres: "Au programme", pratique: "En pratique", deja: "Déjà donné à", kit: "Kit de communication", kitTexte: "Photos haute définition, textes de présentation courts et longs, visuel du programme.",
       telecharger: "Télécharger le kit", fiche: "Fiche technique", spectateur: "Ce que lira votre public", spectateurTexte: "Le soir du concert, votre public ouvre ce programme par QR code : clés d'écoute, textes chantés et traductions.", spectateurVoir: "Voir la page spectateur",
-      demoVideo: "Démo : ici se lance la vidéo, hébergée sur YouTube ou Vimeo en accès non répertorié.", demoKit: "Démo : le kit se télécharge ici.", demoFiche: "Démo : la fiche technique PDF s'ouvre ici.", demoAppel: "Démo : le téléphone de Vincent Lafourcade sonnerait. Votre appel est noté dans son tableau.",
-      saison: "Pour quelle saison ?", periode: "Période ou dates envisagées", periodePh: "Par exemple : un week-end de juillet", message: "Un mot pour Vincent", messagePh: "Votre lieu, votre jauge, vos contraintes…", envoyer: "Envoyer", plusTard: "Plus tard",
-      merci: "Merci", merciTexte: "Vincent Lafourcade a reçu votre demande. Il vous répond sous deux jours ouvrés.",
-      quand: "Quand vous joindre ?", matin: "Ce matin", apresmidi: "Cet après-midi", demain: "Demain", tel: "Votre numéro", rappelOk: "C'est noté : Vincent vous rappelle.",
+      demoVideo: "Démo : ici se lance la vidéo, hébergée sur YouTube ou Vimeo en accès non répertorié.", demoKit: "Démo : le kit se télécharge ici.", demoFiche: "Démo : la fiche technique PDF s'ouvre ici.", demoAppel: "Démo : le téléphone de l'équipe de diffusion sonnerait. Votre appel est noté dans son tableau de bord.",
+      saison: "Pour quelle saison ?", periode: "Période ou dates envisagées", periodePh: "Par exemple : un week-end de juillet", message: "Un mot pour l'équipe de diffusion", messagePh: "Votre lieu, votre jauge, vos contraintes…", envoyer: "Envoyer", plusTard: "Plus tard",
+      merci: "Merci", merciTexte: "L'équipe de diffusion a reçu votre demande. Elle vous répond sous deux jours ouvrés.",
+      quand: "Quand vous joindre ?", matin: "Ce matin", apresmidi: "Cet après-midi", demain: "Demain", tel: "Votre numéro", rappelOk: "C'est noté : l'équipe de diffusion vous rappelle.",
       nouveau: "Nouveau", disque: "Nouveau disque", ecouter: "Écouter", pause: "Pause", phare: "Le programme qui fait entendre le chant choral français",
       bonjour: "Bonjour",
     },
@@ -31,17 +31,17 @@
       pour: "For", selection: (n, qui) => `${qui} picked ${n === 1 ? "this programme" : "these programmes"} for you.`,
       apercu: "Presenter preview", selectionnes: "Selected for you", repertoire: "Full repertoire", repertoireNote: "Nine of the ensemble's eighteen programmes.",
       voir: "Discover", ilsEnParlent: "Press", equipe: "Artistic team", scenes: "Where they have sung",
-      contact: "Let's talk about your season", contactTexte: "A question about a programme, dates or format? Vincent will get back to you.",
+      contact: "Let's talk about your season", contactTexte: "A question about a programme, dates or format? Our booking team will get back to you.",
       interesse: "I'm interested in this programme", interesseCourt: "I'm interested", rappel: "Call me back", appeler: "Call",
       transparence: "This link is personal to you. To answer you better, La Sportelle can see which programmes you view. No other data is collected.",
       fermer: "Close", direction: "Conductor", effectif: "Forces", duree: "Duration", accomp: "Accompaniment",
       video: "Video", inedit: "Unreleased · for presenters only", public: "Excerpt", episode: "The episode", episodeTexte: (d) => `The programme explained in ${d.replace("min", "minutes")}, with what to listen for.`,
       programme: "The programme", oeuvres: "Repertoire", pratique: "Practical details", deja: "Already performed at", kit: "Press kit", kitTexte: "High-resolution photos, short and long descriptions, programme artwork.",
       telecharger: "Download the kit", fiche: "Technical rider", spectateur: "What your audience will read", spectateurTexte: "On the night, your audience opens this programme with a QR code: listening notes, sung texts and translations.", spectateurVoir: "See the audience page",
-      demoVideo: "Demo: the video plays here, hosted unlisted on YouTube or Vimeo.", demoKit: "Demo: the kit downloads here.", demoFiche: "Demo: the PDF rider opens here.", demoAppel: "Demo: Vincent Lafourcade's phone would ring. Your call is logged on his dashboard.",
-      saison: "Which season?", periode: "Period or possible dates", periodePh: "For example: a weekend in July", message: "A note for Vincent", messagePh: "Your venue, capacity, constraints…", envoyer: "Send", plusTard: "Later",
-      merci: "Thank you", merciTexte: "Vincent Lafourcade has received your request. He will reply within two working days.",
-      quand: "When can we reach you?", matin: "This morning", apresmidi: "This afternoon", demain: "Tomorrow", tel: "Your number", rappelOk: "Noted: Vincent will call you back.",
+      demoVideo: "Demo: the video plays here, hosted unlisted on YouTube or Vimeo.", demoKit: "Demo: the kit downloads here.", demoFiche: "Demo: the PDF rider opens here.", demoAppel: "Demo: the booking team's phone would ring. Your call is logged on their dashboard.",
+      saison: "Which season?", periode: "Period or possible dates", periodePh: "For example: a weekend in July", message: "A note for our booking team", messagePh: "Your venue, capacity, constraints…", envoyer: "Send", plusTard: "Later",
+      merci: "Thank you", merciTexte: "Our booking team has received your request. They will reply within two working days.",
+      quand: "When can we reach you?", matin: "This morning", apresmidi: "This afternoon", demain: "Tomorrow", tel: "Your number", rappelOk: "Noted: our booking team will call you back.",
       nouveau: "New", disque: "New album", ecouter: "Listen", pause: "Pause", phare: "The programme that showcases French choral singing",
       bonjour: "Hello",
     },
@@ -89,7 +89,7 @@
     document.documentElement.lang = L;
     const autres = DC.programmes.filter((p) => !choisis.includes(p.id));
     const qui = DC.diffuseurs.find((d) => prog && d.id === prog.d) || DC.diffuseurs[0];
-    const quiNom = qui.id === "vincent" ? qui.nom : "La Sportelle";
+    const quiNom = "La Sportelle";
     document.getElementById("app").innerHTML = `
       <header class="barre">
         <span class="barre-nom">Ensemble la Sportelle</span>

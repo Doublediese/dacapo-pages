@@ -35,7 +35,7 @@ DC.ensemble = {
     { q: "L'Ensemble la Sportelle brille par sa précision.", qen: "Ensemble la Sportelle shines through its precision.", s: "Gerd Klingeberg, Nordsee-Zeitung" },
     { q: "La Sportelle, dont la réputation va grandissant, et pour les meilleures raisons.", qen: "La Sportelle, whose reputation keeps growing, and for the best reasons.", s: "Alain Cochard, Concertclassic" },
   ],
-  contact: { nom: "Vincent Lafourcade", role: { fr: "Responsable du développement", en: "Head of development and booking" } },
+  contact: { nom: "Diffusion", role: { fr: "Ensemble la Sportelle, Rocamadour", en: "Ensemble la Sportelle, Rocamadour, France" } },
   don: "https://www.helloasso.com/associations/cantica-sacra-rocamadour/formulaires/4",
   site: "https://ensemblelasportelle.com",
 };
@@ -164,7 +164,7 @@ DC.programme = (id) => DC.programmes.find((p) => p.id === id);
 
 // Diffuseurs : l'équipe et les agents. La direction voit tout.
 DC.diffuseurs = [
-  { id: "vincent", nom: "Vincent Lafourcade", role: "Développement et diffusion, France", court: "Vincent" },
+  { id: "vincent", nom: "Diffusion France", role: "Chargé de diffusion, France", court: "" },
   { id: "germanophone", nom: "Agence germanophone", role: "Allemagne, Autriche, Suisse", court: "l'agence germanophone", v2: true },
   { id: "oceanie", nom: "Agence Océanie", role: "Australie, Nouvelle-Zélande", court: "l'agence Océanie", v2: true },
   { id: "direction", nom: "Emmeran Rollin", role: "Direction artistique : voit tout", court: "Emmeran", v2: true },
