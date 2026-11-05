@@ -49,7 +49,7 @@
     }).join("");
     document.getElementById("app").innerHTML = `
       <header class="s-haut">
-        <span>Ensemble la Sportelle</span>
+        <img class="s-logo" src="assets/logo-sportelle-clair.png" alt="Ensemble la Sportelle">
         <span style="display:flex;gap:8px;align-items:center">
           <button class="tamis" data-tamis>${document.body.classList.contains("tamise") ? t().rallumer : t().tamiser}</button>
           <span class="langues" role="group" aria-label="Langue">${["fr", "en", "de"].map((l) => `<button data-langue="${l}" class="${l === L ? "actif" : ""}">${l.toUpperCase()}</button>`).join("")}</span>

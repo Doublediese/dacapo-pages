@@ -17,6 +17,8 @@ h1,h2,h3{font-family:var(--titre);font-weight:500;line-height:1.05;margin:0}
 /* ---------- Programmateur ---------- */
 .barre{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(19,26,42,.96);color:#efe9dc;backdrop-filter:blur(8px)}
 .barre-nom{font-family:var(--titre);font-size:20px;letter-spacing:.02em}
+.barre-logo{height:40px;width:auto;display:block}
+.s-logo{height:32px;width:auto;display:block;flex:none}
 .langues{display:flex;gap:2px;border:1px solid rgba(216,180,106,.35);border-radius:999px;padding:2px}
 .langues button{font-size:12px;font-weight:600;letter-spacing:.08em;padding:4px 10px;border-radius:999px;color:#bdb6a6}
 .langues button.actif{background:var(--or-clair);color:var(--nuit)}

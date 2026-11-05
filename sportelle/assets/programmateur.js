@@ -92,7 +92,7 @@
     const quiNom = "La Sportelle";
     document.getElementById("app").innerHTML = `
       <header class="barre">
-        <span class="barre-nom">Ensemble la Sportelle</span>
+        <img class="barre-logo" src="assets/logo-sportelle-clair.png" alt="Ensemble la Sportelle">
         <span class="langues" role="group" aria-label="Langue">
           ${["fr", "en", "de"].map((l) => `<button data-langue="${l}" class="${l === L ? "actif" : ""}">${l.toUpperCase()}</button>`).join("")}
         </span>

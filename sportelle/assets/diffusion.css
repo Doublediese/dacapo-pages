@@ -17,6 +17,7 @@ h1,h2{font-family:var(--serif);font-weight:600;margin:0;line-height:1.15}
 .marque{display:flex;flex-direction:column;line-height:1}
 .marque-dc{font-family:var(--serif);font-size:26px;font-weight:600}
 .marque-rep{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#d0a77a;margin-top:4px}
+.ensemble-nom img{display:block;width:120px;height:auto;margin-top:2px}
 .ensemble-nom{font-family:var(--serif);font-style:italic;font-size:17px;color:#cdbfa8;border-top:1px solid #3a322b;padding-top:14px}
 .menu{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
 .menu button{width:100%;text-align:left;padding:9px 12px;border-radius:8px;color:#cdbfa8;display:flex;justify-content:space-between;align-items:center}
