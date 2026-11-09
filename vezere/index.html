@@ -165,7 +165,6 @@ footer .logo{width:132px}
 </head>
 <body>
 
-<div class="travail">Version de travail · à valider</div>
 
 <div class="page">
 
@@ -282,10 +281,10 @@ footer .logo{width:132px}
   <!-- Bloc 5 -->
   <div class="rappel">
     <h2>Pas encore décidé ?</h2>
-    <p>Laissez votre adresse : le Festival de la Vézère vous écrira une seule fois, le 4 janvier, avec une deuxième histoire à écouter et le lien de réservation.</p>
+    <p>Laissez votre adresse : le Festival de la Vézère vous écrira le 4 janvier, avec une deuxième histoire à écouter et le lien de réservation.</p>
     <form id="rappel" novalidate>
       <input type="email" id="email" placeholder="Votre email" autocomplete="email" aria-label="Votre adresse email">
-      <label class="consent"><input type="checkbox" id="ok"> <span>J’accepte que le Festival de la Vézère utilise mon adresse pour m’envoyer ce rappel. <a href="#" class="provisoire">Politique de confidentialité du Festival</a></span></label>
+      <label class="consent"><input type="checkbox" id="ok"> <span><span id="consentement">J’accepte de recevoir les actualités du Festival de la Vézère, dont le rappel du 4 janvier.</span> <a href="https://dacapo-5bx.pages.dev/vezere/donnees-personnelles" target="_blank" rel="noopener">Vos données personnelles</a></span></label>
       <button type="submit">M’envoyer le rappel</button>
       <div class="retour" id="retour" role="status"></div>
     </form>
@@ -297,7 +296,7 @@ footer .logo{width:132px}
     <p class="coreal">En coréalisation avec la Ville d’Uzerche, Auditorium Sophie-Dessus</p>
     <img class="partenaires" src="partenaires.png" alt="Partenaires de la saison du Festival de la Vézère" width="1542" height="89">
     <p class="signature"><b>Da Capo</b>, conçu par Double Dièse</p>
-    <p class="mentions">Festival de la Vézère · 10 boulevard du Salan, 19100 Brive · <span class="provisoire">mentions légales</span></p>
+    <p class="mentions">Festival de la Vézère · 10 boulevard du Salan, 19100 Brive</p>
   </footer>
 
 </div>
@@ -338,8 +337,22 @@ footer .logo{width:132px}
     var em=document.getElementById('email').value.trim(), ok=document.getElementById('ok').checked, r=document.getElementById('retour');
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){ r.textContent='Cette adresse ne semble pas valide.'; return; }
     if(!ok){ r.textContent='Cochez la case pour que le Festival puisse vous écrire.'; return; }
-    r.textContent='Version de travail : ce formulaire sera relié à l’outil d’emailing du Festival. Rien n’a été envoyé.';
-    suivi('rappel-inscription');
+    // Inscription enregistrée dans Da Capo (production), parmi les contacts du festival : exportables
+    // par le Festival depuis son tableau de bord. Clé publique : la sécurité est dans la base.
+    var bouton=e.target.querySelector('button'); bouton.disabled=true; r.textContent='Envoi…';
+    fetch('https://jzjshosvooimmyjmraua.supabase.co/rest/v1/rpc/register_contact',{
+      method:'POST',
+      headers:{'apikey':'sb_publishable_KwCW9smvoXnID0hisyZGsg_a-MFGp22','Content-Type':'application/json'},
+      body:JSON.stringify({p_concert:'149ab524-f8a9-45cb-aedd-b84f12d7b22b',p_email:em,p_next_day:false,p_news:true,p_attendance:null,
+        p_consent_text:document.getElementById('consentement').textContent})
+    }).then(function(res){
+      if(!res.ok) throw new Error(res.status);
+      r.textContent='C’est noté : le Festival vous écrira le 4 janvier.';
+      e.target.reset();
+      suivi('rappel-inscription');
+    }).catch(function(){
+      r.textContent='Votre adresse n’a pas pu être enregistrée. Vérifiez votre connexion et réessayez.';
+    }).then(function(){ bouton.disabled=false; });
   });
 })();
 </script>
