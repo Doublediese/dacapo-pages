@@ -164,6 +164,7 @@ h1,h2,h3{font-family:var(--titre);font-weight:500;line-height:1.05;margin:0}
 }
 
 /* ---------- Spectateur : la nuit ---------- */
+html.spect{background:#0e1320}
 body.spect{background:#0e1320;color:#ece6d8;--gris-n:#a9a395;--ligne-n:#262e42}
 body.spect.tamise{filter:brightness(.62)}
 .s-haut{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:rgba(14,19,32,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--ligne-n);font-size:13px;color:var(--gris-n)}
