@@ -11,8 +11,8 @@ DC.ensemble = {
   ville: "Albi",
   ligne: { fr: "Quatuor à cordes · Albi · fondé en 2011", en: "String quartet · Albi, France · founded 2011" },
   presentation: {
-    fr: "Akilone vient de l'italien aquilone, le cerf-volant : les pieds sur terre, la tête dans les nuages. Né en 2011 au Conservatoire de Paris, formé par Vladimir Mendelssohn puis par Hatto Beyerle, Premier Grand Prix du concours de Bordeaux en 2016, le quatuor joue de Haydn à la création d'aujourd'hui, au Wigmore Hall comme en prison ou à l'hôpital. Installé à Albi, il s'est ancré dans le Tarn avec le festival Gresinhòl, en forêt de la Grésigne.",
-    en: "Akilone comes from the Italian aquilone, a kite: feet on the ground, head in the clouds. Founded in 2011 at the Paris Conservatoire, mentored by Vladimir Mendelssohn and then Hatto Beyerle, winner of the First Grand Prize at the Bordeaux competition in 2016, the quartet plays everything from Haydn to new commissions, at Wigmore Hall as well as in prisons and hospitals. Based in Albi, it has put down roots in the Tarn with the Gresinhòl festival, in the Grésigne forest.",
+    fr: "Akilone vient de l'italien aquilone, le cerf-volant : les pieds sur terre, la tête dans les nuages. Le quatuor s'est formé en 2011 au Conservatoire de Paris et a reçu à ses débuts les conseils de Vladimir Mendelssohn, puis de Hatto Beyerle. Premier Grand Prix du concours de Bordeaux en 2016, il joue de Haydn à la création d'aujourd'hui, au Wigmore Hall comme en prison ou à l'hôpital. Installé à Albi, il s'est ancré dans le Tarn avec le festival Gresinhòl, en forêt de la Grésigne.",
+    en: "Akilone comes from the Italian aquilone, a kite: feet on the ground, head in the clouds. The quartet came together in 2011 at the Paris Conservatoire and, in its early years, received guidance from Vladimir Mendelssohn and then Hatto Beyerle. Winner of the First Grand Prize at the Bordeaux competition in 2016, it plays everything from Haydn to new commissions, at Wigmore Hall as well as in prisons and hospitals. Based in Albi, it has put down roots in the Tarn with the Gresinhòl festival, in the Grésigne forest.",
   },
   faits: {
     fr: [["2011", "fondation au Conservatoire de Paris"], ["2016", "Premier Grand Prix, concours de Bordeaux"], ["Albi", "port d'attache, en Occitanie"], ["2", "disques, chez Mirare et Klarthe"]],
@@ -246,7 +246,7 @@ DC.concert = {
         "§ Ce que disent les poèmes",
         "Les poèmes de Pfleger-Moravský parlent d'un amour sans retour, d'une nature qui écoute et console, et d'une mort qu'on appelle parfois. Quelques titres du recueil donnent le ton : « Je sais que dans un doux espoir », « Ici, dans la forêt, près du ruisseau », « Dans la douce puissance de tes yeux ». Dvořák garde la forme des chansons : une même mélodie revient, légèrement variée, comme des couplets.",
         "§ Pourquoi le Quatuor Akilone les joue",
-        "C'est Vladimir Mendelssohn, le premier maître du quatuor, qui lui a fait découvrir les Cyprès ; le disque Deep in the Forest lui est dédié. Pour le préparer, les musiciennes sont parties en République tchèque sur les pas de Dvořák, ont travaillé avec le Quatuor Talich et appris la polka auprès de musiciens traditionnels.",
+        "C'est Vladimir Mendelssohn, qui a conseillé le quatuor à ses débuts, qui lui a fait découvrir les Cyprès ; le disque Deep in the Forest lui est dédié. Pour le préparer, les musiciennes sont parties en République tchèque sur les pas de Dvořák, ont travaillé avec le Quatuor Talich et appris la polka auprès de musiciens traditionnels.",
       ],
       ecoute: "Écoutez le premier violon comme une voix : il chante des mots que personne ne prononce.",
       guetter: [
