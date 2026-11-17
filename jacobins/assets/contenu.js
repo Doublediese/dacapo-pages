@@ -171,7 +171,7 @@ DC.contenu = {
     soutenir: "Soutenir le festival",
     bisExemple: "Schumann, Des Abends",
     meteo: "Pluie annoncée : merci de garder vos affaires à l'abri sous les galeries du cloître.",
-    motAccueil: "« Bonsoir. Ce soir, le guide de votre téléphone vous accompagne. Il va passer au noir quand Jonathan Biss entrera : c'est le moment de le ranger. À l'entracte, il vous présente la seconde partie. Et à la fin du récital, vous y trouverez les photos de la soirée, et vous pourrez nous dire, en un mot, ce que vous avez ressenti. »",
+    motAccueil: "« Bonsoir. Ce soir, le guide de votre téléphone vous accompagne. Il va passer au noir quand Jonathan Biss entrera : c'est le moment de le ranger. À l'entracte, il vous présente la seconde partie. Et à la fin du récital, vous pourrez nous dire, en un mot, ce que vous avez ressenti. »",
     nuageLigne: "Mardi 29 septembre, cloître des Jacobins",
   },
 };

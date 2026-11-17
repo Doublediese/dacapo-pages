@@ -55,7 +55,7 @@
       ["reseau", "Vérifier le réseau dans la salle", "regie"],
       ["code", "Confier la Régie : générer le code du soir", "resp", "equipe"],
       ["portes", "QR codes aux portes, consignes à l'accueil", "billet"],
-      ["intro", "Mot d'accueil : annoncer le bis et les photos à la sortie", "resp", "intro"],
+      ["intro", "Mot d'accueil : présenter le guide et le rendez-vous de la fin", "resp", "intro"],
       ["bascules", "Portes, début, entracte, reprise, fin : depuis la Régie", "regie", "soir"],
       ["photos", "Publier quatre à six photos de la soirée", "photo", "soir"],
     ]],

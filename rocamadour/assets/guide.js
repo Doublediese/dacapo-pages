@@ -7,6 +7,12 @@
   const cleLocale = "dc-guide-" + (session || "seul");
 
   let etat = DC.etatVide();
+  // Séance reliée : jusqu'au premier état reçu (4 s au plus), on garde le mode retenu au chargement,
+  // pour ne pas repasser au clair puis au sombre (Safari 26 colore ses barres d'après le fond de la page).
+  const cleMode = "dacapo-mode:" + location.pathname;
+  const modeRetenu = (() => { try { const m = localStorage.getItem(cleMode); return /^(jour|salle|nuit)$/.test(m) ? m : null; } catch { return null; } })();
+  let attente = !!session && !!modeRetenu;
+  if (attente) setTimeout(() => { if (attente) { attente = false; rendre(); } }, 4000);
   let vue = "saison", bandeau = false, statut = session ? "connexion" : "seul";
   // Le niveau de lecture n'est pas mémorisé : chaque ouverture du guide repart sur « En bref ».
   let niveaux = {};
@@ -23,6 +29,7 @@
   }
 
   function recevoir(ev) {
+    attente = false;
     const avant = etat.moment;
     etat = DC.appliquer(etat, ev);
     if (etat.moment !== avant) changementDeMoment(avant, etat.moment);
@@ -37,7 +44,19 @@
     window.scrollTo(0, 0);
   }
 
+  function poserMode(m) {
+    const classe = "mode-" + m, racine = document.documentElement;
+    document.body.className = classe;
+    if (racine.className === classe) return;
+    racine.className = classe;
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const fond = getComputedStyle(racine).getPropertyValue("--fond").trim();
+    if (meta && fond) meta.setAttribute("content", fond);
+    try { localStorage.setItem(cleMode, m); } catch { /* navigation privée */ }
+  }
+
   const mode = () => {
+    if (attente) return modeRetenu;
     if (vue === "saison" || vue === "avant") return "jour";
     if (vue === "salle" && (etat.moment === "commence" || etat.moment === "reprise")) return "nuit";
     if (vue === "salle" || vue === "apres") return etat.moment === "avant" ? "jour" : "salle";
@@ -162,7 +181,7 @@
     const m = etat.moment;
     if (m === "commence" || m === "reprise") {
       const titre = m === "commence" ? "Le concert commence." : "La seconde partie commence.";
-      const suite = m === "commence" ? "Passez votre téléphone en mode avion. Rendez-vous à l'entracte : la suite du programme vous y attend." : "Rendez-vous à la sortie : le bis, les photos et votre mot vous attendent ici.";
+      const suite = m === "commence" ? "Passez votre téléphone en mode avion. Rendez-vous à l'entracte : la suite du programme vous y attend." : "Rendez-vous à la fin du concert : vous pourrez nous dire, en un mot, ce que vous avez ressenti.";
       const lecture = noirLecture ? `<div style="margin-top:26px">${oeuvres((o) => (m === "commence" ? o.partie === 1 : o.partie === 2), true)}</div>` : `<button class="bouton discret" style="margin-top:8px" data-action="noir-lecture">Relire le programme sans éclairer la salle</button>`;
       return `${messageHtml()}<div class="noir apparition"><p class="grand">${titre}</p><p>${suite}</p>${lecture}</div>`;
     }
@@ -189,7 +208,7 @@
 
   function ecranApres() {
     if (etat.moment !== "apres") {
-      return `${entete()}${fil()}${messageHtml()}<h1>Après le concert</h1><p class="accroche">Le bis, les photos de la soirée et votre avis vous attendent ici, dès la fin du concert.</p>${pied()}`;
+      return `${entete()}${fil()}${messageHtml()}<h1>Après le concert</h1><p class="accroche">Dès la fin du concert, cet écran s'ouvre : vous pourrez nous dire, en un mot, ce que vous avez ressenti.</p>${pied()}`;
     }
     const photos = etat.photos.length
       ? `<div class="photos">${etat.photos.map((u, i) => `<figure data-choisir="${esc(u)}" class="${local.choisies.includes(u) ? "choisie" : ""}"><img src="${esc(u)}" alt="Photo de la soirée ${i + 1}" loading="lazy"><input type="checkbox" aria-label="Choisir la photo ${i + 1}" data-photo="${esc(u)}" ${local.choisies.includes(u) ? "checked" : ""}></figure>`).join("")}</div>
@@ -234,7 +253,7 @@
 
   // ---------- Rendu ----------
   function rendre() {
-    document.body.className = "mode-" + mode();
+    poserMode(mode());
     const ecran = { saison: ecranSaison, avant: ecranAvant, salle: ecranSalle, apres: ecranApres }[vue]();
     const focus = document.activeElement && document.activeElement.id;
     if (vue === "apres" && etat.photos.length) prechargerPhotos();

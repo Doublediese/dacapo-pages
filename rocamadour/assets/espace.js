@@ -55,7 +55,7 @@
       ["reseau", "Vérifier le réseau dans la salle", "regie"],
       ["code", "Confier la Régie : générer le code du soir", "resp", "equipe"],
       ["portes", "QR codes aux portes, consignes à l'accueil", "billet"],
-      ["intro", "Mot d'accueil : annoncer le bis et les photos à la sortie", "resp", "intro"],
+      ["intro", "Mot d'accueil : présenter le guide et le rendez-vous de la fin", "resp", "intro"],
       ["bascules", "Portes, début, entracte, reprise, fin : depuis la Régie", "regie", "soir"],
       ["photos", "Publier quatre à six photos de la soirée", "photo", "soir"],
     ]],
@@ -229,7 +229,7 @@
         ${etat.photos.length ? `<div class="photos">${etat.photos.slice(0, 4).map((u) => `<img src="${esc(u)}" alt="">`).join("")}</div>` : ""}
         <p>Vous n'avez pas eu le temps de laisser un mot hier soir ? <a href="${esc(lien)}">Donner mon avis</a></p>
         <p>Votre prochain concert du festival : ${esc(C.prochain)}.</p></div></div>`,
-      intro: `<div class="bloc plein"><p style="margin:0">« Bonsoir. Ce soir, le guide de votre téléphone vous accompagne. Il va passer au noir quand le chef entrera : c'est le moment de le ranger. À l'entracte, il vous présente la seconde partie. Et à la fin du concert, vous y trouverez le bis et les photos de la soirée, et vous pourrez nous dire, en un mot, ce que vous avez ressenti. »</p></div><p class="petit">Texte proposé, à adapter. Lu en trente secondes.</p>`,
+      intro: `<div class="bloc plein"><p style="margin:0">« Bonsoir. Ce soir, le guide de votre téléphone vous accompagne. Il va passer au noir quand le chef entrera : c'est le moment de le ranger. À l'entracte, il vous présente la seconde partie. Et à la fin du concert, vous pourrez nous dire, en un mot, ce que vous avez ressenti. »</p></div><p class="petit">Texte proposé, à adapter. Lu en trente secondes.</p>`,
       bilan: `<div class="bloc"><h3>Bilan du concert du 19 août</h3><p class="petit" style="margin:2px 0 14px">Généré automatiquement à J+7 (exemple)</p>
         ${[["Spectateurs ayant ouvert le guide", "388 sur 590 billets"], ["Venus invités", "24 %"], ["Avis laissés", "121"], ["Nouveaux contacts", "64, dont 19 accompagnants"], ["Reviendraient", "84 %"], ["Écoutes de l'épisode", "203"], ["Mot du mécène écouté", "147 fois"]]
           .map(([l, v]) => `<div class="sans" style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--ligne);font-size:15px"><span>${l}</span><strong style="color:var(--fort)">${v}</strong></div>`).join("")}
