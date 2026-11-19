@@ -229,3 +229,7 @@ body.spect.tamise{filter:brightness(.62)}
   .s-haut>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- Dates dans la demande ---------- */
+.dates{display:flex;flex-direction:column;gap:10px}
+.dates[hidden]{display:none}

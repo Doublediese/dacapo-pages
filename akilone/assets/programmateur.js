@@ -17,12 +17,14 @@
       interesse: "Ce programme m'intéresse", interesseCourt: "Je suis intéressé", rappel: "Rappelez-moi", appeler: "Appeler",
       transparence: "Ce lien vous est personnel. Pour mieux vous répondre, le Quatuor Akilone voit quels programmes vous consultez. Aucune autre donnée n'est recueillie.",
       fermer: "Fermer", direction: "Direction", effectif: "Effectif", duree: "Durée", accomp: "Format",
-      video: "Vidéo", inedit: "Inédit · réservé aux professionnels", public: "Extrait", episode: "L'épisode", episodeTexte: (d) => `Le programme raconté en ${d}, avec les passages à guetter.`,
+      video: "Vidéo", inedit: "Vidéo privée · lisible depuis votre lien seulement", public: "YouTube · non répertoriée", episode: "L'épisode", episodeTexte: (d) => `Le programme raconté en ${d}, avec les passages à guetter.`,
       programme: "Le programme", oeuvres: "Au programme", pratique: "En pratique", deja: "Déjà donné à", kit: "Kit de communication", kitTexte: "Photos haute définition, textes de présentation courts et longs, visuel du programme.",
       telecharger: "Télécharger le kit", fiche: "Fiche technique", spectateur: "Ce que lira votre public", spectateurTexte: "Le soir du concert, votre public ouvre ce programme par QR code : clés d'écoute, textes chantés et traductions.", spectateurVoir: "Voir la page spectateur",
-      demoVideo: "Démo : ici se lance la vidéo, hébergée sur YouTube ou Vimeo en accès non répertorié.", demoKit: "Démo : le kit se télécharge ici.", demoFiche: "Démo : la fiche technique PDF s'ouvre ici.", demoAppel: "Démo : le téléphone du quatuor sonnerait. Votre appel est noté dans son tableau de bord.",
+      demoVideo: "Démo : ici se lance la vidéo, hébergée sur YouTube en accès non répertorié.", demoVideoPrivee: "Démo : la vidéo est lue depuis l'espace du quatuor. Ni lien YouTube ni téléchargement : elle ne circule pas.", demoKit: "Démo : le kit se télécharge ici.", demoFiche: "Démo : la fiche technique PDF s'ouvre ici.", demoAppel: "Démo : le téléphone du quatuor sonnerait. Votre appel est noté dans son tableau de bord.",
       saison: "Pour quelle saison ?", periode: "Période ou dates envisagées", periodePh: "Par exemple : un week-end de juillet", message: "Un mot pour le quatuor", messagePh: "Votre lieu, votre jauge, vos contraintes…", envoyer: "Envoyer", plusTard: "Plus tard",
-      merci: "Merci", merciTexte: "Le quatuor a reçu votre demande. Il vous répond sous deux jours ouvrés.",
+      merci: "Merci", merciTexte: "Le quatuor a reçu votre demande. Il vous répond sous deux jours ouvrés.", merciDates: "Vos dates sont posées dans l'agenda du quatuor.",
+      dateQ: "Avez-vous déjà une date ?", dateAucune: "Pas encore", dateFerme: "Une date ferme", dateOptions: "Deux ou trois options", laDate: "La date", option: "Option", facultatif: "facultative", besoinFerme: "Indiquez la date.", besoinOptions: "Indiquez au moins deux dates.",
+      surMesure: (qui) => `${qui} a composé ce programme pour votre soirée.`,
       quand: "Quand vous joindre ?", matin: "Ce matin", apresmidi: "Cet après-midi", demain: "Demain", tel: "Votre numéro", rappelOk: "C'est noté : le quatuor vous rappelle.",
       nouveau: "Nouveau", disque: "Nouveau disque", ecouter: "Écouter", pause: "Pause", phare: "Le programme qui fait entendre le chant choral français",
       bonjour: "Bonjour",
@@ -35,12 +37,14 @@
       interesse: "I'm interested in this programme", interesseCourt: "I'm interested", rappel: "Call me back", appeler: "Call",
       transparence: "This link is personal to you. To answer you better, Quatuor Akilone can see which programmes you view. No other data is collected.",
       fermer: "Close", direction: "Conductor", effectif: "Forces", duree: "Duration", accomp: "Format",
-      video: "Video", inedit: "Unreleased · for presenters only", public: "Excerpt", episode: "The episode", episodeTexte: (d) => `The programme explained in ${d.replace("min", "minutes")}, with what to listen for.`,
+      video: "Video", inedit: "Private video · plays from your link only", public: "YouTube · unlisted", episode: "The episode", episodeTexte: (d) => `The programme explained in ${d.replace("min", "minutes")}, with what to listen for.`,
       programme: "The programme", oeuvres: "Repertoire", pratique: "Practical details", deja: "Already performed at", kit: "Press kit", kitTexte: "High-resolution photos, short and long descriptions, programme artwork.",
       telecharger: "Download the kit", fiche: "Technical rider", spectateur: "What your audience will read", spectateurTexte: "On the night, your audience opens this programme with a QR code: listening notes, sung texts and translations.", spectateurVoir: "See the audience page",
-      demoVideo: "Demo: the video plays here, hosted unlisted on YouTube or Vimeo.", demoKit: "Demo: the kit downloads here.", demoFiche: "Demo: the PDF rider opens here.", demoAppel: "Demo: the quartet's phone would ring. Your call is logged on their dashboard.",
+      demoVideo: "Demo: the video plays here, hosted unlisted on YouTube.", demoVideoPrivee: "Demo: the video streams from the quartet's own space. No YouTube link, no download: it does not circulate.", demoKit: "Demo: the kit downloads here.", demoFiche: "Demo: the PDF rider opens here.", demoAppel: "Demo: the quartet's phone would ring. Your call is logged on their dashboard.",
       saison: "Which season?", periode: "Period or possible dates", periodePh: "For example: a weekend in July", message: "A note for the quartet", messagePh: "Your venue, capacity, constraints…", envoyer: "Send", plusTard: "Later",
-      merci: "Thank you", merciTexte: "The quartet has received your request. They will reply within two working days.",
+      merci: "Thank you", merciTexte: "The quartet has received your request. They will reply within two working days.", merciDates: "Your dates are now in the quartet's calendar.",
+      dateQ: "Do you already have a date?", dateAucune: "Not yet", dateFerme: "A confirmed date", dateOptions: "Two or three options", laDate: "Date", option: "Option", facultatif: "optional", besoinFerme: "Please give the date.", besoinOptions: "Please give at least two dates.",
+      surMesure: (qui) => `${qui} put this programme together for your evening.`,
       quand: "When can we reach you?", matin: "This morning", apresmidi: "This afternoon", demain: "Tomorrow", tel: "Your number", rappelOk: "Noted: the quartet will call you back.",
       nouveau: "New", disque: "New album", ecouter: "Listen", pause: "Pause", phare: "The programme that showcases French choral singing",
       bonjour: "Hello",
@@ -49,9 +53,14 @@
   const t = () => T[L];
   const tx = (o) => (o && typeof o === "object" ? o[L] || o.fr : o || "");
 
+  // Programme sur mesure : il arrive dans le lien et passe en tête.
+  const sm = DC.params.get("sm") ? DC.surMesure.decoder(DC.params.get("sm")) : null;
+  if (sm && sm.oeuvres.length) DC.programmes.unshift(DC.surMesure.programme(sm));
+
   // Les programmes mis en avant : ceux du lien, sinon ceux de la campagne du programmateur.
   const choisis = (() => {
     const p = (DC.params.get("p") || "").split(",").filter((id) => DC.programme(id));
+    if (sm && DC.programme(sm.id)) return [sm.id, ...p.filter((id) => id !== sm.id)];
     if (p.length) return p;
     const c = DC.campagnes.find((c) => c.id === DC.params.get("c")) || (prog && DC.campagnes.find((c) => c.cat === prog.cat));
     return c ? c.programmes : ["deepforest", "vienne"];
@@ -97,7 +106,7 @@
           ${["fr", "en", "de"].map((l) => `<button data-langue="${l}" class="${l === L ? "actif" : ""}">${l.toUpperCase()}</button>`).join("")}
         </span>
       </header>
-      ${prog ? `<div class="perso"><span class="perso-pour">${t().pour} ${esc(prog.nom)} · ${esc(prog.structure)}</span><span>${esc(t().selection(choisis.length, quiNom))}</span></div>` : `<div class="perso"><span class="perso-pour">${t().apercu}</span></div>`}
+      ${prog ? `<div class="perso"><span class="perso-pour">${t().pour} ${esc(prog.nom)} · ${esc(prog.structure)}</span><span>${esc(sm && DC.programme(sm.id) ? t().surMesure((DC.diffuseurs.find((d) => d.id === sm.d) || qui).nom) : t().selection(choisis.length, quiNom))}</span></div>` : `<div class="perso"><span class="perso-pour">${t().apercu}</span></div>`}
       <section class="hero">
         <p class="surtitre">${esc(tx(E.ligne))}</p>
         <h1>Quatuor<br>Akilone</h1>
@@ -156,11 +165,11 @@
           ${p.phare ? `<p class="phare">${t().phare}</p>` : ""}
         </header>
         <dl class="fiche-meta">${lignes.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
-        <div class="video" data-video="${p.id}" role="button" tabindex="0" style="--a:${p.teinte[0]};--b:${p.teinte[1]}">
-          <span class="video-etiquette">${p.video.inedit ? t().inedit : t().public}</span>
+        ${p.video ? `<div class="video" data-video="${p.id}" role="button" tabindex="0" style="--a:${p.teinte[0]};--b:${p.teinte[1]}">
+          <span class="video-etiquette">${p.video.mode === "privee" ? t().inedit : t().public}</span>
           <span class="video-play">${icone.play}</span>
           <span class="video-duree">${t().video} · ${esc(p.video.duree)}</span>
-        </div>
+        </div>` : ""}
         ${p.episode ? `<div class="episode"><button class="episode-bouton" data-episode="${p.id}" aria-label="${t().ecouter}">${icone.play}</button><div class="episode-corps"><strong>${t().episode} · ${esc(p.episode)}</strong><span>${esc(t().episodeTexte(p.episode))}</span><span class="episode-barre"><span></span></span></div></div>` : ""}
         <section><h3>${t().programme}</h3><p>${esc(tx(p.pitch))}</p></section>
         <section><h3>${t().oeuvres}</h3><ul class="oeuvres">${p.oeuvres.map((o) => `<li>${esc(o)}</li>`).join("")}</ul></section>
@@ -193,14 +202,25 @@
         <fieldset class="choix"><legend>${t().saison}</legend>
           ${["2027-2028", "2028-2029", t().plusTard].map((s, i) => `<label><input type="radio" name="saison" value="${esc(s)}" ${i === 0 ? "checked" : ""}><span>${esc(s)}</span></label>`).join("")}
         </fieldset>
-        <label class="champ"><span>${t().periode}</span><input name="periode" placeholder="${esc(t().periodePh)}"></label>
+        <fieldset class="choix"><legend>${t().dateQ}</legend>
+          ${[["aucune", t().dateAucune], ["ferme", t().dateFerme], ["options", t().dateOptions]].map(([v, l], i) => `<label><input type="radio" name="typedate" value="${v}" ${i === 0 ? "checked" : ""}><span>${esc(l)}</span></label>`).join("")}
+        </fieldset>
+        <div class="dates" data-dates="aucune"><label class="champ"><span>${t().periode}</span><input name="periode" placeholder="${esc(t().periodePh)}"></label></div>
+        <div class="dates" data-dates="ferme" hidden><label class="champ"><span>${t().laDate}</span><input type="date" name="ferme" min="2027-01-01"></label></div>
+        <div class="dates dates-options" data-dates="options" hidden>${[1, 2, 3].map((i) => `<label class="champ"><span>${t().option} ${i}${i === 3 ? ` (${t().facultatif})` : ""}</span><input type="date" name="opt${i}" min="2027-01-01"></label>`).join("")}</div>
         <label class="champ"><span>${t().message}</span><textarea name="message" rows="3" placeholder="${esc(t().messagePh)}"></textarea></label>
         <button class="bouton plein" type="submit">${t().envoyer}</button>
       </form>`);
-    document.getElementById("form-interet").onsubmit = (e) => {
-      e.preventDefault(); const d = new FormData(e.target);
-      signaler({ t: "interet", p: id, mode: "interesse", saison: d.get("saison"), periode: String(d.get("periode") || "").slice(0, 120), message: String(d.get("message") || "").slice(0, 400) });
-      modale(`<button class="fermer" data-fermer-modale aria-label="${t().fermer}">✕</button><div class="merci">${icone.etoile}<h3>${t().merci}</h3><p>${t().merciTexte}</p><button class="bouton" data-fermer-modale>${t().fermer}</button></div>`);
+    const form = document.getElementById("form-interet");
+    form.onchange = (e) => { if (e.target.name === "typedate") form.querySelectorAll("[data-dates]").forEach((x) => { x.hidden = x.dataset.dates !== e.target.value; }); };
+    form.onsubmit = (e) => {
+      e.preventDefault(); const d = new FormData(e.target), type = d.get("typedate");
+      const iso = (v) => (/^\d{4}-\d{2}-\d{2}$/.test(v || "") ? v : "");
+      const dates = {};
+      if (type === "ferme") { if (!iso(d.get("ferme"))) { DC.toast(t().besoinFerme); return; } dates.ferme = iso(d.get("ferme")); }
+      if (type === "options") { const o = [...new Set(["opt1", "opt2", "opt3"].map((k) => iso(d.get(k))).filter(Boolean))].sort(); if (o.length < 2) { DC.toast(t().besoinOptions); return; } dates.options = o; }
+      signaler({ t: "interet", p: id, mode: "interesse", saison: d.get("saison"), periode: type === "aucune" ? String(d.get("periode") || "").slice(0, 120) : "", message: String(d.get("message") || "").slice(0, 400), ...dates });
+      modale(`<button class="fermer" data-fermer-modale aria-label="${t().fermer}">✕</button><div class="merci">${icone.etoile}<h3>${t().merci}</h3><p>${t().merciTexte}${dates.ferme || dates.options ? " " + t().merciDates : ""}</p><button class="bouton" data-fermer-modale>${t().fermer}</button></div>`);
     };
   }
   function rappel(id) {
@@ -224,7 +244,7 @@
   function video(el) {
     const id = el.dataset.video; signaler({ t: "video", p: id });
     el.classList.add("en-lecture");
-    el.innerHTML = `<span class="video-demo">${t().demoVideo}</span><span class="episode-barre clair"><span></span></span>`;
+    el.innerHTML = `<span class="video-demo">${(DC.programme(id).video || {}).mode === "privee" ? t().demoVideoPrivee : t().demoVideo}</span><span class="episode-barre clair"><span></span></span>`;
     const b = el.querySelector(".episode-barre span"); let x = 0;
     const m = setInterval(() => { x += 2; b.style.width = Math.min(x, 100) + "%"; if (x >= 100) clearInterval(m); }, 120);
   }

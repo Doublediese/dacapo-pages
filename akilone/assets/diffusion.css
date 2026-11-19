@@ -173,3 +173,30 @@ h1,h2{font-family:var(--serif);font-weight:600;margin:0;line-height:1.15}
   .table{display:block;overflow-x:auto}
   .barres li{grid-template-columns:110px 1fr 28px}
 }
+
+/* ---------- Dates proposées, agenda ---------- */
+.rdv{display:inline-block;white-space:nowrap;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;margin:6px 6px 0 0}
+.rdv.ferme{background:var(--vert-clair);color:var(--vert)}
+.rdv.option{background:#f6ead0;color:#7a5a12}
+.bloc-dates{border-left:3px solid var(--vert)}
+.liste-rdv,.liste-sm{list-style:none;margin:12px 0 0;padding:0}
+.liste-rdv li,.liste-sm li{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--ligne)}
+.liste-rdv .rdv{margin:0}
+.liste-sm li{justify-content:space-between}
+.liste-sm .sous{display:block}
+.rdv-actions{margin-left:auto;display:flex;gap:6px;white-space:nowrap}
+td.rdv-actions{margin:0}
+.prog-liens{display:flex;gap:16px;flex-wrap:wrap;margin:8px 0 0}
+
+/* ---------- Programme sur mesure ---------- */
+.voile-boite.large{width:min(640px,100%)}
+.form-sm{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.form-sm textarea{font:inherit;font-weight:400;padding:10px 12px;border:1px solid var(--ligne);border-radius:8px}
+.sm-oeuvres{display:flex;flex-direction:column;gap:6px;max-height:42vh;overflow:auto;padding-right:4px}
+.sm-oeuvres label{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--ligne);border-radius:8px;font-weight:400;cursor:pointer}
+.sm-oeuvres label:has(input:checked){border-color:var(--rouge);background:var(--rouge-clair)}
+.sm-oeuvres label>span:first-of-type{flex:1;display:flex;flex-direction:column}
+.sm-c{font-size:12px;color:var(--gris)}
+.sm-min{font-size:12.5px;color:var(--gris);white-space:nowrap}
+.sm-total{margin:0;font-size:14px}
+.sm-recap{margin:12px 0;padding-left:20px;font-size:14px}

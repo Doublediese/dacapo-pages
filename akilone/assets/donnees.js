@@ -43,7 +43,7 @@ DC.ensemble = {
 // Les programmes. « teinte » colore la vignette ; « equipe » : la page spectateur existe.
 DC.programmes = [
   {
-    id: "deepforest", titre: "Deep in the Forest", sous: { fr: "Dvořák, des Cyprès au dernier quatuor", en: "Dvořák, from Cypresses to the last quartet" },
+    id: "deepforest", base: ["dvorakcypres", "dvorak105"], titre: "Deep in the Forest", sous: { fr: "Dvořák, des Cyprès au dernier quatuor", en: "Dvořák, from Cypresses to the last quartet" },
     direction: "", effectif: { fr: "Quatuor à cordes", en: "String quartet" }, duree: "1 h 10", accomp: { fr: "Deux parties, entracte", en: "Two halves, interval" },
     badge: { fr: "Disque Klarthe · clés d'écoute prêtes", en: "Klarthe album · listening guide ready" }, teinte: ["#14241d", "#5d6b45"], equipe: true, phare: true,
     pitch: {
@@ -53,10 +53,10 @@ DC.programmes = [
     oeuvres: ["Antonín Dvořák, Cyprès, B. 152", "Antonín Dvořák, Quatuor n° 14 en la bémol majeur, op. 105"],
     pratique: { fr: ["Salle de concert, église ou grange à l'acoustique généreuse", "4 musiciennes en tournée", "Vidéos et podcast disponibles pour votre communication"], en: ["Concert hall, church or barn with a generous acoustic", "4 musicians on tour", "Films and podcast available for your marketing"] },
     deja: ["Vienne, Ehrbar Saal"],
-    video: { inedit: true, duree: "3:20" }, episode: "8 min",
+    video: { mode: "privee", duree: "3:20" }, episode: "8 min",
   },
   {
-    id: "vienne", titre: "Cent ans à Vienne", sous: { fr: "Beethoven, Berg, Webern", en: "Beethoven, Berg, Webern" },
+    id: "vienne", base: ["webern9", "berg", "beethoven130"], titre: "Cent ans à Vienne", sous: { fr: "Beethoven, Berg, Webern", en: "Beethoven, Berg, Webern" },
     direction: "", effectif: { fr: "Quatuor à cordes", en: "String quartet" }, duree: "1 h 40", accomp: { fr: "Deux parties, entracte", en: "Two halves, interval" },
     badge: { fr: "Carte blanche", en: "Carte blanche" }, teinte: ["#1f1d2b", "#6a5a7a"],
     pitch: {
@@ -66,10 +66,10 @@ DC.programmes = [
     oeuvres: ["Anton Webern, Six bagatelles, op. 9", "Alban Berg, Suite lyrique", "Ludwig van Beethoven, Quatuor n° 13 en si bémol majeur, op. 130, et Grande Fugue, op. 133"],
     pratique: { fr: ["Programme long : 1 h 40 avec entracte", "Rencontre ou table ronde possible avant le concert", "4 musiciennes en tournée"], en: ["Long programme: 1 h 40 with interval", "Pre-concert talk or panel possible", "4 musicians on tour"] },
     deja: ["Printemps des Arts de Monte-Carlo"],
-    video: { inedit: true, duree: "2:40" }, episode: null,
+    video: { mode: "privee", duree: "2:40" }, episode: null,
   },
   {
-    id: "transformations", titre: "Cinq transformations", sous: { fr: "Xu Yi et le dernier Beethoven", en: "Xu Yi and late Beethoven" },
+    id: "transformations", base: ["xuyi", "beethoven135"], titre: "Cinq transformations", sous: { fr: "Xu Yi et le dernier Beethoven", en: "Xu Yi and late Beethoven" },
     direction: "", effectif: { fr: "Quatuor à cordes", en: "String quartet" }, duree: "45 min", accomp: { fr: "Sans entracte", en: "No interval" },
     badge: { fr: "Création 2026", en: "Premiere 2026" }, teinte: ["#2a2620", "#8a7346"],
     pitch: {
@@ -79,10 +79,10 @@ DC.programmes = [
     oeuvres: ["Xu Yi, Cinq transformations", "Ludwig van Beethoven, Quatuor n° 16 en fa majeur, op. 135"],
     pratique: { fr: ["Format court, idéal en fin d'après-midi ou en concert double", "4 musiciennes en tournée"], en: ["Short format, ideal for an early evening slot or a double bill", "4 musicians on tour"] },
     deja: ["Philharmonie de Paris, Biennale de quatuors à cordes"],
-    video: { inedit: true, duree: "1:50" }, episode: null,
+    video: { mode: "privee", duree: "1:50" }, episode: null,
   },
   {
-    id: "fondateurs", titre: "Haydn, Mozart, Schubert", sous: { fr: "Les fondateurs viennois", en: "The Viennese founders" },
+    id: "fondateurs", base: ["haydn20-2", "mozart387", "schubert703"], titre: "Haydn, Mozart, Schubert", sous: { fr: "Les fondateurs viennois", en: "The Viennese founders" },
     direction: "", effectif: { fr: "Quatuor à cordes", en: "String quartet" }, duree: "1 h 05", accomp: { fr: "Une ou deux parties", en: "One or two halves" },
     badge: { fr: "Premier disque · Mirare", en: "Debut album · Mirare" }, teinte: ["#2b2420", "#9a7b4f"],
     pitch: {
@@ -92,10 +92,10 @@ DC.programmes = [
     oeuvres: ["Joseph Haydn, Quatuor en do majeur, op. 20 n° 2", "Wolfgang Amadeus Mozart, Quatuor en sol majeur, K. 387", "Franz Schubert, Quartettsatz en do mineur, D. 703"],
     pratique: { fr: ["Toutes salles, des plus intimes aux plus grandes", "4 musiciennes en tournée"], en: ["Any venue, from the most intimate to the largest", "4 musicians on tour"] },
     deja: [],
-    video: { inedit: false, duree: "3:00" }, episode: null,
+    video: { mode: "youtube", duree: "3:00" }, episode: null,
   },
   {
-    id: "kreutzer", titre: "Sonate à Kreutzer", sous: { fr: "Haydn, Janáček, Schubert", en: "Haydn, Janáček, Schubert" },
+    id: "kreutzer", base: ["haydn74-3", "janacek1", "schubert804"], titre: "Sonate à Kreutzer", sous: { fr: "Haydn, Janáček, Schubert", en: "Haydn, Janáček, Schubert" },
     direction: "", effectif: { fr: "Quatuor à cordes", en: "String quartet" }, duree: "1 h 10", accomp: { fr: "Deux parties, entracte", en: "Two halves, interval" },
     badge: null, teinte: ["#2c1f24", "#8b5a5a"],
     pitch: {
@@ -105,7 +105,7 @@ DC.programmes = [
     oeuvres: ["Joseph Haydn, Quatuor op. 74 n° 3 « Le Cavalier »", "Leoš Janáček, Quatuor n° 1 « Sonate à Kreutzer »", "Franz Schubert, Quatuor n° 13 « Rosamunde », D. 804"],
     pratique: { fr: ["Salle de concert ou théâtre", "4 musiciennes en tournée"], en: ["Concert hall or theatre", "4 musicians on tour"] },
     deja: ["Quimper, Théâtre de Cornouaille"],
-    video: { inedit: false, duree: "2:30" }, episode: null,
+    video: { mode: "youtube", duree: "2:30" }, episode: null,
   },
   {
     id: "vents", titre: "Cordes et vents", sous: { fr: "Avec David Walter, hautbois, et Michel Moraguès, flûte", en: "With David Walter, oboe, and Michel Moraguès, flute" },
@@ -118,7 +118,7 @@ DC.programmes = [
     oeuvres: ["Programme détaillé sur demande"],
     pratique: { fr: ["6 musiciens en tournée", "Ateliers possibles avec les Concerts de Poche"], en: ["6 musicians on tour", "Workshops possible with Les Concerts de Poche"] },
     deja: ["Théâtre de Corbeil-Essonnes"],
-    video: { inedit: true, duree: "1:40" }, episode: null,
+    video: { mode: "privee", duree: "1:40" }, episode: null,
   },
   {
     id: "mozart", titre: "Soirée Mozart", sous: { fr: "Avec Reed Tetzloff, piano", en: "With Reed Tetzloff, piano" },
@@ -131,10 +131,58 @@ DC.programmes = [
     oeuvres: ["Programme détaillé sur demande"],
     pratique: { fr: ["Piano de concert accordé le jour même", "5 musiciens en tournée"], en: ["Concert grand tuned on the day", "5 musicians on tour"] },
     deja: ["Théâtre d'Angoulême"],
-    video: { inedit: false, duree: "2:10" }, episode: null,
+    video: { mode: "youtube", duree: "2:10" }, episode: null,
   },
 ];
 DC.programme = (id) => DC.programmes.find((p) => p.id === id);
+
+// Base des œuvres que le quatuor a au répertoire : on y pioche pour composer un programme sur mesure.
+// Durées indicatives, à valider avec le quatuor.
+DC.oeuvres = [
+  { id: "haydn20-2", c: "Joseph Haydn", t: "Quatuor en do majeur, op. 20 n° 2", min: 24 },
+  { id: "haydn74-3", c: "Joseph Haydn", t: "Quatuor en sol mineur, op. 74 n° 3 « Le Cavalier »", min: 21 },
+  { id: "mozart387", c: "Wolfgang Amadeus Mozart", t: "Quatuor en sol majeur, K. 387", min: 28 },
+  { id: "beethoven130", c: "Ludwig van Beethoven", t: "Quatuor n° 13, op. 130, avec la Grande Fugue", min: 50 },
+  { id: "beethoven135", c: "Ludwig van Beethoven", t: "Quatuor n° 16 en fa majeur, op. 135", min: 25 },
+  { id: "schubert703", c: "Franz Schubert", t: "Quartettsatz en do mineur, D. 703", min: 9 },
+  { id: "schubert804", c: "Franz Schubert", t: "Quatuor n° 13 « Rosamunde », D. 804", min: 33 },
+  { id: "mendelssohn18", c: "Felix Mendelssohn", t: "Quatuor en mi bémol majeur, MWV R 18", min: 25 },
+  { id: "dvorakcypres", c: "Antonín Dvořák", t: "Cyprès, B. 152", min: 32 },
+  { id: "dvorak105", c: "Antonín Dvořák", t: "Quatuor n° 14 en la bémol majeur, op. 105", min: 32 },
+  { id: "debussy", c: "Claude Debussy", t: "Quatuor en sol mineur, op. 10", min: 25 },
+  { id: "janacek1", c: "Leoš Janáček", t: "Quatuor n° 1 « Sonate à Kreutzer »", min: 18 },
+  { id: "webern9", c: "Anton Webern", t: "Six bagatelles, op. 9", min: 4 },
+  { id: "berg", c: "Alban Berg", t: "Suite lyrique", min: 30 },
+  { id: "xuyi", c: "Xu Yi", t: "Cinq transformations", min: 18 },
+];
+DC.oeuvre = (id) => DC.oeuvres.find((o) => o.id === id);
+
+// Programme sur mesure : composé pour une soirée et un programmateur, transmis dans son lien personnel.
+DC.surMesure = {
+  minutes: (ids) => ids.reduce((s, id) => s + ((DC.oeuvre(id) || {}).min || 0), 0),
+  duree: (m) => (m >= 60 ? `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, "0")}` : `${m} min`),
+  encoder: (sm) => btoa(unescape(encodeURIComponent(JSON.stringify({ i: sm.id, t: sm.titre, o: sm.oeuvres, n: sm.note || "", d: sm.d }))))
+    .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""),
+  decoder: (s) => {
+    try {
+      const j = JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g, "+").replace(/_/g, "/")))));
+      if (!/^sm-[a-z0-9]+$/.test(j.i) || !Array.isArray(j.o)) return null;
+      return { id: j.i, titre: String(j.t || "Programme sur mesure").slice(0, 80), oeuvres: j.o.filter((id) => DC.oeuvre(id)), note: String(j.n || "").slice(0, 400), d: j.d };
+    } catch { return null; }
+  },
+  programme: (sm) => {
+    const m = DC.surMesure.minutes(sm.oeuvres);
+    return {
+      id: sm.id, sm: true, titre: sm.titre, sous: { fr: "Composé pour votre soirée", en: "Put together for your evening" },
+      direction: "", effectif: { fr: "Quatuor à cordes", en: "String quartet" }, duree: DC.surMesure.duree(m),
+      accomp: { fr: m > 75 ? "Deux parties, entracte" : "Sans entracte", en: m > 75 ? "Two halves, interval" : "No interval" },
+      badge: { fr: "Sur mesure", en: "Tailor-made" }, teinte: ["#2a2018", "#a9843f"],
+      pitch: { fr: sm.note || "Un programme composé pour vous, à partir du répertoire du quatuor.", en: sm.note || "A programme put together for you from the quartet's repertoire." },
+      oeuvres: sm.oeuvres.map((id) => { const o = DC.oeuvre(id); return `${o.c}, ${o.t}`; }),
+      pratique: { fr: ["4 musiciennes en tournée"], en: ["4 musicians on tour"] }, deja: [], video: null, episode: null,
+    };
+  },
+};
 
 // Diffuseurs : les quatre musiciennes. Élise (id « direction ») pilote la diffusion et voit tout ;
 // les trois autres n'ont pas de zone : chacune a ses propres contacts et peut trouver des concerts.
@@ -159,21 +207,21 @@ DC.categories = [
 // (0 : rien ouvert ; 1 : ouvert ; 2 : programme lu ; 3 : vidéo ou épisode ; 4 : demande de contact).
 DC.programmateurs = [
   { cle: "cv7k", nom: "Claire Vasseur", structure: "Festival Quatuors en Gâtinais", lieu: "Centre-Val de Loire", pays: "FR", cat: "festivals", d: "direction", n: 0, demo: true },
-  { cle: "lb4t", nom: "Louis Bernier", structure: "Rencontres musicales de Saint-Rémy-des-Bois", lieu: "Bourgogne", pays: "FR", cat: "festivals", d: "direction", n: 4 },
+  { cle: "lb4t", nom: "Louis Bernier", structure: "Rencontres musicales de Saint-Rémy-des-Bois", lieu: "Bourgogne", pays: "FR", cat: "festivals", d: "direction", n: 4, dates: { options: ["2027-07-16", "2027-07-23", "2027-08-06"] } },
   { cle: "sa9t", nom: "Sophie Arnaud", structure: "Festival Cordes en Corbières", lieu: "Occitanie", pays: "FR", cat: "festivals", d: "magdalena", n: 3 },
   { cle: "ml4r", nom: "Marc Lefort", structure: "Nuits de la Chartreuse", lieu: "Auvergne", pays: "FR", cat: "festivals", d: "direction", n: 3 },
   { cle: "im2c", nom: "Isabelle Morin", structure: "Musique au pays des Lacs", lieu: "Savoie", pays: "FR", cat: "festivals", d: "perrine", n: 2 },
   { cle: "ap8n", nom: "Anne-Laure Pichon", structure: "Festival des Granges", lieu: "Bretagne", pays: "FR", cat: "festivals", d: "lucie", n: 1 },
   { cle: "nf5h", nom: "Nicolas Faure", structure: "Les Heures du quatuor", lieu: "Nouvelle-Aquitaine", pays: "FR", cat: "festivals", d: "direction", n: 0 },
   { cle: "gm6w", nom: "Gilles Martel", structure: "Été musical du Vexin", lieu: "Normandie", pays: "FR", cat: "festivals", d: "magdalena", n: 2 },
-  { cle: "jm3p", nom: "Julien Marchetti", structure: "Musique en garrigue", lieu: "Provence", pays: "FR", cat: "festivals", d: "direction", n: 4 },
-  { cle: "hd2v", nom: "Hélène Dufresne", structure: "Scène nationale de l'Estuaire", lieu: "Pays de la Loire", pays: "FR", cat: "scenes", d: "perrine", n: 4 },
+  { cle: "jm3p", nom: "Julien Marchetti", structure: "Musique en garrigue", lieu: "Provence", pays: "FR", cat: "festivals", d: "direction", n: 4, dates: { ferme: "2027-07-21" } },
+  { cle: "hd2v", nom: "Hélène Dufresne", structure: "Scène nationale de l'Estuaire", lieu: "Pays de la Loire", pays: "FR", cat: "scenes", d: "perrine", n: 4, dates: { options: ["2027-11-18", "2027-11-25"] } },
   { cle: "pg7m", nom: "Paul Gendron", structure: "Saison musicale de Valmont", lieu: "Grand Est", pays: "FR", cat: "scenes", d: "direction", n: 1 },
   { cle: "tb3s", nom: "Thomas Bérard", structure: "Auditorium du Prieuré", lieu: "Touraine", pays: "FR", cat: "scenes", d: "perrine", n: 3 },
   { cle: "cr8d", nom: "Camille Roussel", structure: "Auditorium des Docks", lieu: "Hauts-de-France", pays: "FR", cat: "scenes", d: "magdalena", n: 0 },
   { cle: "ev2n", nom: "Élodie Vernet", structure: "Théâtre de la Halle aux grains", lieu: "Auvergne", pays: "FR", cat: "scenes", d: "direction", n: 2 },
   { cle: "rb6q", nom: "Romain Blanchard", structure: "Scène conventionnée des Causses", lieu: "Occitanie", pays: "FR", cat: "scenes", d: "lucie", n: 0 },
-  { cle: "kw4b", nom: "Katharina Weber", structure: "Kammermusiktage Lindenau", lieu: "Sachsen", pays: "DE", cat: "europe", d: "magdalena", n: 4, lang: "en" },
+  { cle: "kw4b", nom: "Katharina Weber", structure: "Kammermusiktage Lindenau", lieu: "Sachsen", pays: "DE", cat: "europe", d: "magdalena", n: 4, lang: "en", dates: { ferme: "2027-09-12" } },
   { cle: "mb9f", nom: "Matthias Brandt", structure: "Quartettfest Kirchberg", lieu: "Bayern", pays: "DE", cat: "europe", d: "direction", n: 3, lang: "en" },
   { cle: "sg2r", nom: "Stefan Gruber", structure: "Konzerthaus Seefeld", lieu: "Tirol", pays: "AT", cat: "europe", d: "lucie", n: 1, lang: "en" },
   { cle: "pn5d", nom: "Petra Nováková", structure: "Letní komorní dny Lipnice", lieu: "Vysočina", pays: "CZ", cat: "europe", d: "magdalena", n: 3, lang: "en" },
@@ -206,7 +254,7 @@ DC.historique = () => {
       if (p.n >= 1) ev("ouvre", 0);
       if (p.n >= 2) { ev("programme", 0.1, { p: p1 }); if (i % 2) ev("programme", 0.2, { p: p2 }); }
       if (p.n >= 3) { ev("video", 0.15, { p: p1 }); if (i % 3 === 0) ev("episode", 0.3, { p: p1 }); if (i % 2 === 0) ev("ouvre", 20); }
-      if (p.n >= 4) { ev("kit", 20.2, { p: p1 }); ev("interet", 20.4, { p: p1, mode: i % 2 ? "rappel" : "interesse", saison: "2027-2028", message: i % 2 ? "" : "Nous cherchons un quatuor pour notre week-end d'ouverture. Possible en juillet ?" }); }
+      if (p.n >= 4) { ev("kit", 20.2, { p: p1 }); ev("interet", 20.4, { p: p1, mode: i % 2 ? "rappel" : "interesse", saison: "2027-2028", message: i % 2 ? "" : "Nous cherchons un quatuor pour notre week-end d'ouverture. Possible en juillet ?", ...(p.dates || {}) }); }
     });
   });
   return evs.sort((a, b) => a.at - b.at);
